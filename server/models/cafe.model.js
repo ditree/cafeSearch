@@ -8,13 +8,31 @@ const CafeSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    address: {
+        unit: String,
+        house: String,
+        street: String,
+        city: String,
+        country: String,
+        postal: String
+    },
     position: {
         lat: Number,
         lng: Number
     },
-    createdAt: {
-        type: Date,
-        default: Date.now
+    phone: String,
+    email: String,
+    website: String,
+    photo: String,
+    rating: Number,
+    schedule: {
+        mn: String,
+        tu: String,
+        we: String,
+        th: String,
+        fr: String,
+        sa: String,
+        su: String
     }
 });
 
@@ -40,11 +58,11 @@ CafeSchema.statics = {
         })
     },
     /**
-     * List of cafe in ascending order on 'tytle'
+     * List of cafe in ascending order on 'title'
      * @param {number} limit - limited number to be returned
      * @returns {Promise<Cafe[]>}
      */
-    list({limit = 50} = {}){
+    list({limit = 150} = {}){
         return this.find()
         .sort({ tytle: 1 })
         .limit(+limit)

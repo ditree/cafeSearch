@@ -5,11 +5,11 @@ const app = require('./server/config/express');
 
 Promise = require('bluebird');
 
- mongoose.Promise = Promise;
-
+ //mongoose.Promise = Promise;
+mongoose.Promise = global.Promise;
 //connect to mongo db
 const mongoUri = config.mongo.host;
-mongoose.connect(mongoUri, { server: { socketOptions: { keepAlive: 1 } } });
+mongoose.connect(mongoUri, { useMongoClient: true });
 mongoose.connection.on('error', () => {
     throw new Error(`unable to connect to database: ${mongoUri}`);
 });
