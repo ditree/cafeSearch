@@ -36,8 +36,8 @@ import { PostDetailComponent } from './features/components/post-detail/post-deta
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    AppRoutingModule,
     LoginRoutingModule,
+    AppRoutingModule,
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,

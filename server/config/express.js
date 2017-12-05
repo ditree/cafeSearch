@@ -75,7 +75,8 @@ app.use((req, res, next) => {
 app.use((err, req, res, next) => 
     res.status(err.status).json({
         message: err.isPublic ? err.message : httpStatus[err.status],
-        stack: conf.env === 'development' ? err.stack : {}
+        //stack: conf.env === 'development' ? err.stack : {}
+        stack: err.stack
     })
 );
 

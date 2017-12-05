@@ -8,7 +8,6 @@ import { CafeListComponent } from './features/components/cafe-list/cafe-list.com
 import { CafeDetailComponent } from './features/components/cafe-detail/cafe-detail.component';
 import { PostListComponent } from './features/components/post-list/post-list.component';
 import { PostDetailComponent } from './features/components/post-detail/post-detail.component';
-
 const routes: Routes = [
     {
         path: 'searchByName',
@@ -44,8 +43,7 @@ const routes: Routes = [
         path: 'admin',
         loadChildren: 'app/features/containers/admin/admin.module#AdminModule',
         canLoad: [AuthGuardService]
-      },
-
+     },
     {
         path: '',
         redirectTo: 'searchByName',
