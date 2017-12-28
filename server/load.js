@@ -1,8 +1,14 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/serch', { useMongoClient: true });
+const config = require('./config/config');
+
 const Cafe = require('./models/cafe.model'),
     Post = require('./models/post.model');
 mongoose.Promise = global.Promise;
+const mongoUri = config.mongo.host;
+mongoose.connect(mongoUri, { useMongoClient: true });
+mongoose.connection.on('error', () => {
+    throw new Error(`unable to connect to database: ${mongoUri}`);
+});
 
 Cafe.remove({}, (err, res) => {
     if(err) throw err;

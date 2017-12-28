@@ -12,7 +12,7 @@ const router = express.Router();
 // POST /api/auth/login - Returns token if correct username and password
 router.route('/login')
     .post(validate(paramValidation.login), authCtrl.login);
-
+   
 // GET /api/auth/random-number - Authorization: Bearer {token}
 /*router.route('/random-number')
     .get(expressJwt({ secret: config.jwtSecret }), authCtrl.getRandomNumber);

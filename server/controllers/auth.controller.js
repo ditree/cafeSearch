@@ -15,16 +15,18 @@ const user = {
  * @param {*} next 
  */
 function login(req, res, next) {
-    if (req.body.username === user.name && req.body.password == user.password) {
-        const token = 'token';/*jwt.sign({
+    console.log(req.body);
+    if (req.body.username === user.username && req.body.password == user.password) {
+        const token = 'token';
+        /*jwt.sign({
             username: user.username
         }, config.jwtSecret);*/
         return res.json({
-            token,
+            token: token,
             username: user.username
         });
     }
-
+ 
     const err = new APIError('Authentication error', httpStatus.UNAUTHORIZED, true);
     return next(err);
 }

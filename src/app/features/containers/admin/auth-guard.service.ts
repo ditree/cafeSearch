@@ -27,14 +27,14 @@ export class AuthGuardService implements CanActivate, CanActivateChild, CanLoad 
     if (this.authService.isLoggedIn) { return true; }
     this.authService.redirectUrl = url;
     const sessionId = 1234567890;
-    //const navigationExtras: NavigationExtras = {
-      //queryParams: {'session_id': sessionId},
-      //fragment: 'anchor'
-    //};
+    // const navigationExtras: NavigationExtras = {
+      // queryParams: {'session_id': sessionId},
+      // fragment: 'anchor'
+    // };
 
-    //this.router.navigate(['/login'], navigationExtras);
+    // this.router.navigate(['/login'], navigationExtras);
     this.router.navigate(['/login']);
     return false;
-    //return true;
+    // return true;
   }
 }

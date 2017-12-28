@@ -9,7 +9,7 @@ const expressValidation = require('express-validation');
 const routes = require('../routes/index.route');
 
 // const config = require('./config');
-// const APIError = require('../helpers/APIError');
+ const APIError = require('../helpers/APIError');
 // const postCtrl = require('../controllers/post.controller');
 
 
@@ -29,10 +29,10 @@ const app = express();
 }*/
 
 // parse body params 
-app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
-app.use(cookieParser());
+//app.use(cookieParser());
 // app.use(compress());
 // app.use(methodOverride());
 
@@ -42,14 +42,21 @@ app.use(cookieParser());
     expressWinston.requestWhitelist.push('body');
     expressWinston.responseWhitelist.push('body');
 }*/
-// point static path to dist
-app.use(express.static(path.join(appRoot.path, 'dist')));
 // set api routes
 app.use('/api', routes);
+// point static path to dist
+app.use(express.static(path.join(appRoot.path, 'dist')));
+
 // catch all other routes and return the index file
 app.get('*', (req, res) => {
     res.sendFile(path.join(appRoot.path, 'dist/index.html'))
 });
+app.disable('etag');
+/*app.get('/api/*', function(req, res, next){ 
+    res.setHeader('Last-Modified', (new Date()).toUTCString());
+    next(); 
+  });*/
+  
 
 app.use((err, req, res, next) => {
     if (err instanceof expressValidation.ValidationError) {
@@ -72,12 +79,23 @@ app.use((req, res, next) => {
     winstonInstance
 }));
 */
-app.use((err, req, res, next) => 
-    res.status(err.status).json({
-        message: err.isPublic ? err.message : httpStatus[err.status],
-        //stack: conf.env === 'development' ? err.stack : {}
-        stack: err.stack
-    })
+app.use((err, req, res, next) => {
+    console.log(err);
+    if(err.status >= 100 && err.status < 600){   
+        res.status(err.status).json({
+            message: err.isPublic ? err.message : httpStatus[err.status],
+            //stack: conf.env === 'development' ? err.stack : {}
+            stack: err.stack
+        });
+    }
+    else {
+        res.status(500).json({
+            message: err.isPublic ? err.message : httpStatus[err.status],
+            //stack: conf.env === 'development' ? err.stack : {}
+            stack: err.stack
+        });
+    }
+}
 );
 
 module.exports = app;

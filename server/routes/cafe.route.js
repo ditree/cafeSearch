@@ -13,8 +13,8 @@ router.route('/')
 router.route('/:cafeId')
     .get(cafeCtrl.get)
     .put(validate(paramValidation.updateCafe), cafeCtrl.update)
-    .delete(cafeCtrl.remove);
+    .delete(validate(paramValidation.deleteCafe), cafeCtrl.remove);
 
-router.param('cafeId', cafeCtrl.load);
+//router.param('cafeId', cafeCtrl.load);
 
 module.exports = router;

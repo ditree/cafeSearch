@@ -9,6 +9,7 @@ import { APP_BASE_HREF, Location } from '@angular/common';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { LoginRoutingModule } from './features/containers/admin/login-routing.module';
+import { HttpServerModule } from './core/http-server/http-server.module';
 import { LoginComponent } from './features/containers/admin/login/login.component';
 import * as _ from 'lodash';
 import { PageNotfoundComponent } from './utils/components/page-notfound/page-notfound.component';
@@ -19,6 +20,7 @@ import { CafeListComponent } from './features/components/cafe-list/cafe-list.com
 import { CafeDetailComponent } from './features/components/cafe-detail/cafe-detail.component';
 import { PostListComponent } from './features/components/post-list/post-list.component';
 import { PostDetailComponent } from './features/components/post-detail/post-detail.component';
+import { ModalErrorComponent } from './core/components/modal-error/modal-error.component';
 
 @NgModule({
   declarations: [
@@ -31,13 +33,15 @@ import { PostDetailComponent } from './features/components/post-detail/post-deta
     CafeListComponent,
     CafeDetailComponent,
     PostListComponent,
-    PostDetailComponent
+    PostDetailComponent,
+    ModalErrorComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     LoginRoutingModule,
     AppRoutingModule,
+    HttpServerModule,
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
@@ -45,6 +49,9 @@ import { PostDetailComponent } from './features/components/post-detail/post-deta
     NgbModule.forRoot()
   ],
   providers: [],
+  entryComponents: [
+    ModalErrorComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

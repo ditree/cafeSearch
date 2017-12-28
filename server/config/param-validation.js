@@ -20,6 +20,21 @@ const validationParam = {
             cafeId: Joi.string().hex().required()
         }
     },
+    deleteCafe: {
+        params: {
+            cafeId: Joi.string().hex().required()
+        }
+    },
+    createPost: {
+        body: {
+            cafeID: Joi.string().hex().required(),
+        }
+    },
+    deletePost: {
+        params: {
+            postId: Joi.string().hex().required()
+        }
+    },
     login: {
         body: {
             username: Joi.string().required(),

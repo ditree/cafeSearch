@@ -8,12 +8,12 @@ const router = express.Router();
 
 router.route('/')
     .get(postCtrl.list)
-    .post(postCtrl.create);
+    .post(validate(paramValidation.createPost), postCtrl.create);
 
 router.route('/:postId')
     .get(postCtrl.get)
-    .delete(postCtrl.remove);
+    .delete(validate(paramValidation.deletePost), postCtrl.remove);
 
-router.param('postId', postCtrl.load);
+//router.param('postId', postCtrl.load);
 
 module.exports = router;

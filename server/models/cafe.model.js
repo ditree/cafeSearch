@@ -1,7 +1,7 @@
-const Promise = require('bluebird');
+//const Promise = require('bluebird');
 const mongoose = require('mongoose');
-const httpStatus = require('http-status');
-const APIError = require('../helpers/APIError');
+//const httpStatus = require('http-status');
+//const APIError = require('../helpers/APIError');
 
 const CafeSchema = new mongoose.Schema({
     title: {
@@ -41,31 +41,21 @@ CafeSchema.method({
 });
 
 CafeSchema.statics = {
-/**
- * Get cafe
- * @param {ObjectId} id 
- * @returns {Promise<Cafe, APIError>}
- */
+
     get(id){
         return this.findById(id)
-        .exec()
-        .then((cafe) => {
-            if (cafe) {
-                return cafe;
-            }
-            const err = new APIError('Cafe is not found!', httpStatus.NOT_FOUND);
-            return Promise.reject(err);
-        })
+        .exec();
+       
     },
     /**
      * List of cafe in ascending order on 'title'
      * @param {number} limit - limited number to be returned
      * @returns {Promise<Cafe[]>}
      */
-    list({limit = 150} = {}){
+    list(){
+    
         return this.find()
-        .sort({ tytle: 1 })
-        .limit(+limit)
+        .sort({ title: 1 })
         .exec();
     }
 };

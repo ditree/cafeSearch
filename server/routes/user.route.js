@@ -11,6 +11,6 @@ router.route('/')
 router.route('/:userId')
     .get(userCtrl.get);
 // load user when API with userId route parameter is hit
-router.param('userId', userCtrl.load);
+//router.param('userId', userCtrl.load);
 
 module.exports =  router;
