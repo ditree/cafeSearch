@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ManageCafeService } from '../services/manage-cafe.service';
 
 @Component({
   selector: 'app-manage-cafes',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ManageCafesComponent implements OnInit {
 
-  constructor() { }
+  constructor(public cafeService: ManageCafeService) { }
 
   ngOnInit() {
+    this.cafeService.getCafes().subscribe();
   }
 
 }

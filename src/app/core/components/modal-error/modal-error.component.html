@@ -1,4 +1,4 @@
-<div role="dialog" area-labelledby="modal-title" area-describedby="modal-text" class="modal__error">
+<!--<div role="dialog" area-labelledby="modal-title" area-describedby="modal-text" class="modal__error">
   <div class="modal-header">
       <h3 id="modal-title" class="modal-title">
           Error message
@@ -8,4 +8,12 @@
       <p id="modal-text">{{message}}</p>
   </div>
   <div class="modal-footer"></div>
+</div>-->
+<h1 mat-dialog-title>Error message</h1>
+<div mat-dialog-content>
+  {{data.message}}
+</div>
+<div mat-dialog-actions>
+  <!--<button mat-button [mat-dialog-close]="data.animal" tabindex="2">Ok</button>-->
+  <button mat-button (click)="onNoClick()" tabindex="0">OK</button>
 </div>

@@ -1,31 +1,40 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationExtras } from '@angular/router';
-import { AuthService } from '../auth.service';
-
+import { AuthService } from '../services/auth.service';
+import {FormBuilder, FormGroup, FormControl, Validators} from '@angular/forms';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  message: string;
 
-  constructor(public authService: AuthService, public router: Router) {
-    this.setMessage();
+  loginForm: FormGroup;
+  constructor(public authService: AuthService, public router: Router,
+  private fb: FormBuilder) {
+
    }
 
   ngOnInit() {
-    console.log('login component was loaded');
+    this.loginForm = this.fb.group({
+      'userCtrl': new FormControl('', [
+        Validators.required
+        ]),
+        'paswCtrl': new FormControl('', [
+        Validators.required
+      ])
+    });
   }
 
-  setMessage() {
-    this.message = 'Logged ' + (this.authService.isLoggedIn ? 'in' : 'out');
-  }
+  login(form) {
 
-  login() {
-    this.message = 'Trying to login';
-    this.authService.login().subscribe(() => {
-      this.setMessage();
+    // console.log(form.value.paswCtrl);
+    const credentials = {
+      username: form.value.userCtrl,
+      password: form.value.paswCtrl
+    };
+    this.authService.login(credentials).subscribe(() => {
+
       if (this.authService.isLoggedIn) {
         const redirect = this.authService.redirectUrl ? this.authService.redirectUrl : '/admin';
         const navigationExtras: NavigationExtras = {
@@ -37,8 +46,4 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  logout() {
-    this.authService.logout();
-    this.setMessage();
-  }
 }

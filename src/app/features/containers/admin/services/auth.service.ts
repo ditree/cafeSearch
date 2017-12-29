@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import 'rxjs/add/observable/of';
 import { Observable } from 'rxjs/Rx';
-import { HttpServerService } from '../../../core/http-server/http-server.service';
+import { HttpServerService } from '../../../../core/http-server/http-server.service';
 // import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 @Injectable()
 export class AuthService {
@@ -12,11 +12,12 @@ export class AuthService {
 
   constructor(private httpServer: HttpServerService) { }
 
-  login(): Observable<boolean> {
-    const credentials =  {
+  login(credentials): Observable<boolean> {
+    /*const credentials =  {
       username: 'admin',
       password: 'express'
-    };
+    };*/
+    console.log(credentials);
     this.loginPromise = this.httpServer.postHttp('/auth/login', credentials)
     .map((response: Response) => {
       return (<any>response);
@@ -29,7 +30,7 @@ export class AuthService {
     })
     .flatMap(data => {
       this.user = data;
-      console.log('user', this.user);
+      // console.log('user', this.user);
       this.isLoggedIn = true;
       return Observable.of(true);
     })

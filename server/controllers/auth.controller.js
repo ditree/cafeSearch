@@ -15,7 +15,7 @@ const user = {
  * @param {*} next 
  */
 function login(req, res, next) {
-    console.log(req.body);
+     //console.log(req.body);
     if (req.body.username === user.username && req.body.password == user.password) {
         const token = 'token';
         /*jwt.sign({

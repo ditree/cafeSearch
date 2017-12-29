@@ -3,7 +3,7 @@ import { Http, Response, RequestOptionsArgs, Headers } from '@angular/http';
 import {Observable} from 'rxjs/Rx';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalErrorComponent } from '../components/modal-error/modal-error.component';
-
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import * as _ from 'lodash';
 
 @Injectable()
@@ -15,7 +15,8 @@ export class HttpServerService {
 
   constructor(
     protected http: Http,
-    private modalService: NgbModal
+    private modalService: NgbModal,
+    public dialog: MatDialog
   ) {
     this.endpointUrl = '/api';
   }
@@ -28,10 +29,18 @@ export class HttpServerService {
     delete this.headers[key];
   }
 
-  private setErrorModal() {
-    const modalRef = this.modalService.open(ModalErrorComponent,
+  private setErrorModal(err: string) {
+    /*const modalRef = this.modalService.open(ModalErrorComponent,
        {size: 'sm', backdrop: 'static', keyboard: false});
-    modalRef.componentInstance.message = 'General error';
+    modalRef.componentInstance.message = 'General error';*/
+    let dialogRef = this.dialog.open(ModalErrorComponent, {
+      width: '250px',
+      data: { message:  err}
+    });
+
+    /*dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });*/
   }
 
   postHttp(url: string, data: object, options?: RequestOptionsArgs): Observable<{} | Response> {
@@ -40,7 +49,13 @@ export class HttpServerService {
       return Observable.of(result);
     })
     .catch(error => {
-      this.setErrorModal();
+      if (error.status === 500 || error.status === 0) {
+        this.setErrorModal('General error');
+      } else if (error.status === 400) {
+        this.setErrorModal('Not valid request');
+      }  else if (error.status === 401) {
+        this.setErrorModal('Unauthorized');
+      }
       throw Observable.throw(error);
     });
   }
@@ -51,7 +66,14 @@ export class HttpServerService {
       return Observable.of(result);
     })
     .catch(error => {
-      this.setErrorModal();
+      console.log('error', error);
+      if (error.status === 500 || error.status === 0) {
+        this.setErrorModal('General error');
+      } else if (error.status === 400) {
+        this.setErrorModal('Not valid request');
+      }  else if (error.status === 401) {
+        this.setErrorModal('Unauthorized');
+      }
       throw Observable.throw(error);
     });
   }

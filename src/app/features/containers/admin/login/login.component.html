@@ -1,6 +1,24 @@
-<h2>LOGIN</h2>
-<p>{{message}}</p>
-<p>
-  <button (click)="login()"  *ngIf="!authService.isLoggedIn">Login</button>
-  <button (click)="logout()" *ngIf="authService.isLoggedIn">Logout</button>
-</p>
+<form [formGroup]="loginForm" >
+  <h2>Administarator login</h2>
+  <div>
+    <mat-form-field hideRequiredMarker="false"
+    floatLabel="auto">
+      <input type="text" matInput placeholder="Enter User Name" name="userCtr"
+    formControlName="userCtrl" maxlength="30" tabindex=0 required>
+      <mat-error *ngIf="loginForm.get('userCtrl')?.invalid">User Name is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field
+    hideRequiredMarker="false"
+    floatLabel="auto">
+      <input type="password" matInput placeholder="Enter Password" name="paswCtrl" 
+    formControlName="paswCtrl" maxlength="30" tabindex=0 required>
+      <mat-error *ngIf="loginForm.get('paswCtrl')?.invalid">Password is required</mat-error>
+    </mat-form-field>
+  </div>
+
+  <div>
+    <button mat-raised-button color="primary"
+    (click)="login(loginForm)"  *ngIf="!authService.isLoggedIn">Login</button>
+  </div>
+</form>

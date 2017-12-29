@@ -1,4 +1,6 @@
-<nav>
+<button style="float:right; margin-right: 150px;" mat-raised-button 
+(click)="logout()" *ngIf="authService.isLoggedIn" color="primary">Logout</button>
+<nav style="clear: both">
   <a [routerLink]="['cafes']">Manage Cafes</a>
   <a [routerLink]="['posts']">Manage Posts</a>
 </nav>

@@ -40,7 +40,8 @@ PostSchema.statics = {
  * @returns {Promise<Post, APIError>}
  */
     get(id){
-        return this.findById(id)
+       // return this.findById(id) //will search by cafeId
+       return this.find({cafeID: id})
         .exec()
         .then((post) => {
             if (post) {
@@ -57,6 +58,7 @@ PostSchema.statics = {
      */
     list({limit = 50} = {}){
         return this.find()
+        .populate('cafeID', 'title')
         .sort({ tytle: 1 })
         .limit(+limit)
         .exec();

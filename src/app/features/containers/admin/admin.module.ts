@@ -6,6 +6,8 @@ import { AdminComponent } from './admin/admin.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { ManageCafesComponent } from './manage-cafes/manage-cafes.component';
 import { ManagePostsComponent } from './manage-posts/manage-posts.component';
+import { ManageCafeService } from './services/manage-cafe.service';
+import { ManagePostsService } from './services/manage-posts.service';
 
 @NgModule({
     imports: [
@@ -17,6 +19,9 @@ import { ManagePostsComponent } from './manage-posts/manage-posts.component';
         AdminDashboardComponent,
         ManageCafesComponent,
         ManagePostsComponent
+    ], providers: [
+        ManageCafeService,
+        ManagePostsService
     ]
 })
 export class AdminModule {}

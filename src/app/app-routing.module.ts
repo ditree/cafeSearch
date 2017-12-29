@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { PageNotfoundComponent } from './utils/components/page-notfound/page-notfound.component';
-import { AuthGuardService } from './features/containers/admin/auth-guard.service';
-import { SearchByNameComponent } from './features/containers/search-by-name/search-by-name.component';
-import { SearchByLocationComponent } from './features/containers/search-by-location/search-by-location.component';
-import { CafeListComponent } from './features/components/cafe-list/cafe-list.component';
-import { CafeDetailComponent } from './features/components/cafe-detail/cafe-detail.component';
-import { PostListComponent } from './features/components/post-list/post-list.component';
-import { PostDetailComponent } from './features/components/post-detail/post-detail.component';
+import { AuthGuardService } from './features/containers/admin/services/auth-guard.service';
+import { SearchByNameComponent } from './features/containers/search/search-by-name/search-by-name.component';
+import { SearchByLocationComponent } from './features/containers/search/search-by-location/search-by-location.component';
+import { CafeListComponent } from './features/containers/search/cafe-list/cafe-list.component';
+import { CafeDetailComponent } from './features/containers/search/cafe-detail/cafe-detail.component';
+import { PostListComponent } from './features/containers/search/post-list/post-list.component';
+import { PostDetailComponent } from './features/containers/search/post-detail/post-detail.component';
 const routes: Routes = [
     {
         path: 'searchByName',
