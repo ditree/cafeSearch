@@ -3,12 +3,54 @@ import 'rxjs/add/observable/of';
 import { Observable } from 'rxjs/Rx';
 import { HttpServerService } from '../../../../core/http-server/http-server.service';
 import { ICafe, Cafe } from '../../../data-models/cafes';
+import * as _ from 'lodash';
 @Injectable()
 export class ManageCafeService {
   cafePromise: any = {};
+  cafeEditPromise: any = {};
+  cafeDeletePromise: any = {};
   cafeList: ICafe[] = [];
   listLoading = false;
   constructor(private httpServer: HttpServerService) { }
+
+findCafe(id: string): ICafe {
+
+  return _.find(this.cafeList, (item) => {
+    return item.id === id;
+  });
+}
+
+editCafe(updatedCafe: ICafe): Observable<boolean> {
+  this.cafeEditPromise = this.httpServer.putHttp('/cafes/' + updatedCafe.id, updatedCafe)
+  .map((response: Response) => {
+    return (<any>response);
+  })
+  .flatMap(data => {
+    console.log('result', data);
+    return Observable.of(true);
+  })
+  .catch(reason => {
+    console.log('error', reason);
+    throw Observable.throw(reason);
+  });
+  return this.cafeEditPromise;
+}
+
+deleteCafe(id: string): Observable<boolean> {
+  this.cafeDeletePromise = this.httpServer.deleteHttp('/cafes/' + id)
+  .map((response: Response) => {
+    return (<any>response);
+  })
+  .flatMap(data => {
+    console.log('result', data);
+    return Observable.of(true);
+  })
+  .catch(reason => {
+    console.log('error', reason);
+    throw Observable.throw(reason);
+  });
+  return this.cafeDeletePromise;
+}
 
  getCafes(): Observable<ICafe[]> {
    this.listLoading = true;

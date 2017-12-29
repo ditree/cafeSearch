@@ -63,6 +63,5 @@ export class Cafe implements ICafe {
 
     constructor(cafeInfo?: ICafe) {
         Object.assign(this, cafeInfo);
-       
     }
 }

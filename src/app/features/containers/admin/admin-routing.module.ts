@@ -6,6 +6,7 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { ManageCafesComponent } from './manage-cafes/manage-cafes.component';
 import { ManagePostsComponent } from './manage-posts/manage-posts.component';
 
+
 const adminRoutes: Routes = [
     {
         path: '',

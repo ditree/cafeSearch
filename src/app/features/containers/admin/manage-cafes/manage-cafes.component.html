@@ -1,9 +1,33 @@
-<div style="margin-top:50px;" class="table-responsive">
-
+<div class="cafe-container">
+<div class="table-responsive cafe-table">
   <table class="table table-hover">
-    <tr *ngFor="let detail of cafeService.cafeList; let i = index; trackBy i;">
-      <td>{{detail.title}}</td>
-    </tr>
+    <thead>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Contact</th>
+      <th>Rating</th>
+      <th>Action</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let detail of cafeService.cafeList; let i = index; trackBy i;">
+        <td>{{detail.title}}</td>
+        <td>
+          {{detail.address.unit}} {{detail.address.unit!==''? '-' : ''}} {{detail.address.house}} {{detail.address.street}}, <br/>
+          {{detail.address.city}}, {{detail.address.postal}}
+        </td>
+        <td>
+          Phone: {{detail.phone}}<br/>
+          Email: {{detail.email}}<br/>
+          Website: {{detail.website}}
+        </td>
+        <td>{{detail.rating}}</td>
+        <td>
+          <button mat-raised-button color="primary" (click)="edit(detail.id)">Edit</button>
+          <button mat-raised-button color="warn" (click)="delete(detail.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
   </table>
 
+</div>
 </div>

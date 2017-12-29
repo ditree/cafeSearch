@@ -1,0 +1,22 @@
+.cafe-container {
+    margin: auto;
+    width: 80%;
+    padding: 10px;
+}
+td {
+    text-align: left;
+}
+th:nth-child(3) {
+    min-width: 250px;
+}
+td:nth-child(3) {
+    min-width: 250px;
+}
+th:nth-child(5) {
+    padding-left: 50px;
+    min-width: 200px;
+}
+td:nth-child(5) {
+    padding-left: 50px;
+    min-width: 200px;
+}

@@ -33,7 +33,7 @@ export class HttpServerService {
     /*const modalRef = this.modalService.open(ModalErrorComponent,
        {size: 'sm', backdrop: 'static', keyboard: false});
     modalRef.componentInstance.message = 'General error';*/
-    let dialogRef = this.dialog.open(ModalErrorComponent, {
+    const dialogRef = this.dialog.open(ModalErrorComponent, {
       width: '250px',
       data: { message:  err}
     });
@@ -78,13 +78,46 @@ export class HttpServerService {
     });
   }
 
+  putHttp(url: string, data: object, options?: RequestOptionsArgs): Observable<{} | Response> {
+    return this.put(url, data, options)
+    .flatMap(result => {
+      return Observable.of(result);
+    })
+    .catch(error => {
+      if (error.status === 500 || error.status === 0) {
+        this.setErrorModal('General error');
+      } else if (error.status === 400) {
+        this.setErrorModal('Not valid request');
+      }  else if (error.status === 401) {
+        this.setErrorModal('Unauthorized');
+      }
+      throw Observable.throw(error);
+    });
+  }
+
+  deleteHttp(url: string, options?: RequestOptionsArgs): Observable<{} | Response> {
+    return this.delete(url, options)
+    .flatMap(result => {
+      return Observable.of(result);
+    })
+    .catch(error => {
+      if (error.status === 500 || error.status === 0) {
+        this.setErrorModal('General error');
+      } else if (error.status === 400) {
+        this.setErrorModal('Not valid request');
+      }  else if (error.status === 401) {
+        this.setErrorModal('Unauthorized');
+      }
+      throw Observable.throw(error);
+    });
+  }
+
   private get(url: string, options?: RequestOptionsArgs): Observable<Response> {
     return this.http.get(this.generateUrl(url), this.generateOptions(options))
       .map(this.responseHandler, this);
   }
 
   private post(url: string, data: object, options?: RequestOptionsArgs): Observable<Response> {
-    console.log(JSON.stringify(data));
     return this.http.post(this.generateUrl(url), JSON.stringify(data), this.generateOptions(options))
     .map(this.responseHandler, this);
   }

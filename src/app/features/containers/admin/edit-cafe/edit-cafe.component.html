@@ -1,0 +1,13 @@
+<h1 mat-dialog-title>Edit {{data.title}}</h1>
+<div mat-dialog-content>
+    <mat-form-field>
+        <input matInput tabindex="1" [(ngModel)]="data.cafe.title">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput tabindex="1" [(ngModel)]="data.cafe.photo">
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+    <button mat-button [mat-dialog-close]="data.cafe" tabindex="2">Ok</button>
+    <button mat-button (click)="onCancelClick()" tabindex="-1">Cancel</button>
+</div>
