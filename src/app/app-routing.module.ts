@@ -8,36 +8,18 @@ import { CafeListComponent } from './features/containers/search/cafe-list/cafe-l
 import { CafeDetailComponent } from './features/containers/search/cafe-detail/cafe-detail.component';
 import { PostListComponent } from './features/containers/search/post-list/post-list.component';
 import { PostDetailComponent } from './features/containers/search/post-detail/post-detail.component';
+import { SearchComponent } from './features/containers/search/search/search.component';
 const routes: Routes = [
     {
-        path: 'searchByName',
-        component: SearchByNameComponent,
-        children: [
-            {path: '', component: CafeListComponent},
-            {
-                path: 'cafe/:id',
-                component: CafeDetailComponent,
-                children: [
-                            {path: 'posts', component: PostListComponent},
-                            {path: 'newPost', component: PostDetailComponent}
-                        ]
-            }
-        ]
-    },
-    {
-        path: 'searchByLocation',
-        component: SearchByLocationComponent,
-        children: [
-            {path: '', component: CafeListComponent},
-            {
-                path: 'cafe/:id',
-                component: CafeDetailComponent,
-                children: [
-                            {path: 'posts', component: PostListComponent},
-                            {path: 'newPost', component: PostDetailComponent}
-                        ]
-            }
-        ]
+        path: 'search',
+        component: SearchComponent,
+
+            children: [
+                {path: 'searchByName', component: SearchByNameComponent},
+                {path: 'searchByLocation', component: SearchByLocationComponent},
+                {path: 'cafe/:id', component: CafeDetailComponent},
+                {path: '', component: SearchByNameComponent}
+            ]
     },
     {
         path: 'admin',
@@ -46,7 +28,7 @@ const routes: Routes = [
      },
     {
         path: '',
-        redirectTo: 'searchByName',
+        redirectTo: 'search',
         pathMatch: 'full'
     },
     {

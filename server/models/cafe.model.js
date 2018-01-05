@@ -2,6 +2,7 @@
 const mongoose = require('mongoose');
 //const httpStatus = require('http-status');
 //const APIError = require('../helpers/APIError');
+const Post = require('./post.model');
 
 const CafeSchema = new mongoose.Schema({
     title: {
@@ -38,6 +39,11 @@ const CafeSchema = new mongoose.Schema({
 
 CafeSchema.method({
 
+});
+
+CafeSchema.pre('remove', function(next) {
+    Post.remove({cafeID: this._id}).exec();
+    next();
 });
 
 CafeSchema.statics = {

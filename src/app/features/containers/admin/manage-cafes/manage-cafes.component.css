@@ -18,5 +18,5 @@ th:nth-child(5) {
 }
 td:nth-child(5) {
     padding-left: 50px;
-    min-width: 200px;
+    width: 238px;
 }

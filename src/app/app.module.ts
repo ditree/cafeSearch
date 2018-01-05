@@ -22,6 +22,7 @@ import { CafeDetailComponent } from './features/containers/search/cafe-detail/ca
 import { PostListComponent } from './features/containers/search/post-list/post-list.component';
 import { PostDetailComponent } from './features/containers/search/post-detail/post-detail.component';
 import { ModalErrorComponent } from './core/components/modal-error/modal-error.component';
+import { SearchComponent } from './features/containers/search/search/search.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { ModalErrorComponent } from './core/components/modal-error/modal-error.c
     CafeDetailComponent,
     PostListComponent,
     PostDetailComponent,
-    ModalErrorComponent
+    ModalErrorComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

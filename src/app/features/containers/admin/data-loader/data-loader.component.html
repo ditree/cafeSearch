@@ -1,0 +1,4 @@
+<div *ngIf="!loading; else loader" role="status">
+  <ng-content></ng-content>
+</div>
+<ng-template #loader><i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i></ng-template>

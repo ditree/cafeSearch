@@ -17,17 +17,61 @@ export class ManageCafesComponent implements OnInit {
     this.cafeService.getCafes().subscribe();
   }
 
+  add() {
+    const dialogRef = this.dialog.open(EditCafeComponent, {
+      width: '650px',
+      data: { cafe: {
+        title: '',
+        address: {
+            unit: '',
+            house: '',
+            street: '',
+            city: '',
+            country: '',
+            postal: ''
+        },
+        position: {
+            lat: 53.6325784,
+            lng: 23.479206
+        },
+        phone: '',
+        email: '',
+        website: '',
+        photo: '',
+        rating: '',
+        schedule: {
+            mn: '',
+            tu: '',
+            we: '',
+            th: '',
+            fr: '',
+            sa: '',
+            su: ''
+        }
+      }, action: 'Add' }
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed', result);
+      if (result) {
+        console.log('add');
+        //this.cafeService.addCafe(result).subscribe();
+      }
+    });
+  }
+
   edit(id) {
     const cafeData = this.cafeService.findCafe(id);
     console.log('edit called ', id);
     const dialogRef = this.dialog.open(EditCafeComponent, {
-      width: '650px',
-      data: { cafe: cafeData }
+      width: '750px',
+      data: { cafe: cafeData, action: 'Edit' }
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-      this.cafeService.editCafe(result).subscribe();
+      console.log('The dialog was closed', result);
+      if (result) {
+        this.cafeService.editCafe(result).subscribe();
+      }
     });
   }
   delete(id) {

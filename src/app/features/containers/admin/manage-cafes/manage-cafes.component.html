@@ -1,5 +1,9 @@
 <div class="cafe-container">
-<div class="table-responsive cafe-table">
+<app-data-loader [loading]="cafeService.listLoading">  
+<div style="margin-top: 50px; margin-bottom:50px; float:left;">
+      <button mat-raised-button color="accent" (click)="add()">New</button>
+</div>
+<div class="table-responsive cafe-table" style="clear:both;">
   <table class="table table-hover">
     <thead>
       <th>Name</th>
@@ -30,4 +34,5 @@
   </table>
 
 </div>
+</app-data-loader>
 </div>
