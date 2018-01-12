@@ -1,0 +1,26 @@
+.post-container {
+    position: relative;
+    margin: auto;
+    width: 80%;
+    padding: 10px;
+}
+.name {
+    position: absolute;
+    left: 0px;
+    width: 200px;
+}
+.rating {
+    position: absolute;
+    right: 0px;
+    width: 200px;
+}
+.phone {
+    position: absolute;
+    left: 0px;
+    width: 200px;
+}
+.email {
+    position: absolute;
+    right: 0px;
+    width: 200px;
+}

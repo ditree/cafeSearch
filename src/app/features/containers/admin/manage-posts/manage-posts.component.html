@@ -1,3 +1,18 @@
-<p>
-  manage-posts works!
-</p>
+<div class="post-container">
+  <app-data-loader [loading]="postService.listLoading">  
+    <mat-accordion>
+        <mat-expansion-panel *ngFor="let group of postService.groupedList; let i = index; trackBy i;">
+            <mat-expansion-panel-header> {{group.title}} </mat-expansion-panel-header>
+            <div *ngFor="let detail of group.details; let j = index; trackBy j;">
+              <span class="name">{{detail.user.name}}</span><span class="rating">{{detail.rating}}</span><br/>
+              <p>{{detail.text}}</p>
+              Phone: <span class="phone">{{detail.user.phone}}</span>Email: <span class="email">{{detail.user.email}}</span><br/>
+              <span>{{detail.createdAt}}</span>
+              <mat-action-row>
+                  <button mat-raised-button color="warn" (click)="delete(detail.id)">Delete</button>
+              </mat-action-row>
+            </div>
+        </mat-expansion-panel>
+    </mat-accordion>
+  </app-data-loader>
+</div>

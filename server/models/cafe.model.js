@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 //const httpStatus = require('http-status');
 //const APIError = require('../helpers/APIError');
 const Post = require('./post.model');
+const request = require('request');
 
 const CafeSchema = new mongoose.Schema({
     title: {
@@ -43,6 +44,34 @@ CafeSchema.method({
 
 CafeSchema.pre('remove', function(next) {
     Post.remove({cafeID: this._id}).exec();
+    next();
+});
+
+CafeSchema.pre('save', function(next) {
+ 
+    var house = this.address.house !== '' ? this.address.house+'+' : '';
+    var street = this.address.street !== '' ? (this.address.street).replace(/ /g, '+')+',+' : '';
+    var city = this.address.city !== '' ? this.address.city+',+' : 'Минск,+';
+    var country = this.address.country !== '' ? this.address.city : 'Беларусь';
+
+    /*var test = 'https://maps.googleapis.com/maps/api/geocode/json?'+
+    'address='+house+street+city+this.address.country+
+    '&language=ru&key=AIzaSyAG5wtDTPZIhhEac8P0g-bbcZrjvzRwUyM';
+    console.log('url save', test);*/
+
+    request(encodeURI('https://maps.googleapis.com/maps/api/geocode/json?'+
+    'address='+house+street+city+this.address.country+
+    '&language=ru&key=AIzaSyAG5wtDTPZIhhEac8P0g-bbcZrjvzRwUyM'),
+    {json: true}, (err, res, body) => {
+        if (err) {console.log(err);}
+        else if (body.results && body.results[0].geometry) {
+            this.position.lat = body.results[0].geometry.location.lat;
+            this.position.lng = body.results[0].geometry.location.lng;
+            // console.log(body.results[0].geometry);
+        }
+        
+
+    });
     next();
 });
 

@@ -146,7 +146,7 @@ export class HttpServerService {
   }
 
   protected generateUrl(url: string): string {
-    return !!url.match(/^((?:http(|s):\/\/www\.)|(?:http:\/\/))/) ? url : this.endpointUrl + url;
+    return url.match(/^(http|https):\/\//) ? url : this.endpointUrl + url;
   }
 
   protected generateOptions(options: RequestOptionsArgs = {}): RequestOptionsArgs {

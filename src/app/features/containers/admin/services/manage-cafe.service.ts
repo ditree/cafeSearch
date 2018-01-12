@@ -7,8 +7,8 @@ import * as _ from 'lodash';
 @Injectable()
 export class ManageCafeService {
   cafePromise: any = {};
-  cafeEditPromise: any = {};
-  cafeDeletePromise: any = {};
+  // cafeEditPromise: any = {};
+  // cafeDeletePromise: any = {};
   cafeList: ICafe[] = [];
   listLoading = false;
   constructor(private httpServer: HttpServerService) { }
@@ -20,8 +20,8 @@ findCafe(id: string): ICafe {
   });
 }
 
-editCafe(updatedCafe: ICafe): Observable<boolean> {
-  this.cafeEditPromise = this.httpServer.putHttp('/cafes/' + updatedCafe.id, updatedCafe)
+addCafe(newCafe: ICafe): Observable<boolean> {
+  this.cafePromise = this.httpServer.postHttp('/cafes', newCafe)
   .map((response: Response) => {
     return (<any>response);
   })
@@ -33,11 +33,27 @@ editCafe(updatedCafe: ICafe): Observable<boolean> {
     console.log('error', reason);
     throw Observable.throw(reason);
   });
-  return this.cafeEditPromise;
+  return this.cafePromise;
+}
+
+editCafe(updatedCafe: ICafe): Observable<boolean> {
+  this.cafePromise = this.httpServer.putHttp('/cafes/' + updatedCafe.id, updatedCafe)
+  .map((response: Response) => {
+    return (<any>response);
+  })
+  .flatMap(data => {
+    console.log('result', data);
+    return Observable.of(true);
+  })
+  .catch(reason => {
+    console.log('error', reason);
+    throw Observable.throw(reason);
+  });
+  return this.cafePromise;
 }
 
 deleteCafe(id: string): Observable<boolean> {
-  this.cafeDeletePromise = this.httpServer.deleteHttp('/cafes/' + id)
+  this.cafePromise = this.httpServer.deleteHttp('/cafes/' + id)
   .map((response: Response) => {
     return (<any>response);
   })
@@ -49,7 +65,7 @@ deleteCafe(id: string): Observable<boolean> {
     console.log('error', reason);
     throw Observable.throw(reason);
   });
-  return this.cafeDeletePromise;
+  return this.cafePromise;
 }
 
  getCafes(): Observable<ICafe[]> {

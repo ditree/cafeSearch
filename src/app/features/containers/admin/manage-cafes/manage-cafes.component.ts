@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ManageCafeService } from '../services/manage-cafe.service';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import { EditCafeComponent } from '../edit-cafe/edit-cafe.component';
-import { ICafe } from '../../../data-models/cafes';
+import { ICafe, Cafe } from '../../../data-models/cafes';
 @Component({
   selector: 'app-manage-cafes',
   templateUrl: './manage-cafes.component.html',
@@ -53,8 +53,10 @@ export class ManageCafesComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed', result);
       if (result) {
-        console.log('add');
-        //this.cafeService.addCafe(result).subscribe();
+        console.log('add', result);
+        this.cafeService.addCafe(result).subscribe(() => {
+          this.cafeService.getCafes().subscribe();
+        });
       }
     });
   }
@@ -63,19 +65,23 @@ export class ManageCafesComponent implements OnInit {
     const cafeData = this.cafeService.findCafe(id);
     console.log('edit called ', id);
     const dialogRef = this.dialog.open(EditCafeComponent, {
-      width: '750px',
+      width: '650px',
       data: { cafe: cafeData, action: 'Edit' }
     });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed', result);
       if (result) {
-        this.cafeService.editCafe(result).subscribe();
+        this.cafeService.editCafe(result).subscribe(() => {
+          this.cafeService.getCafes().subscribe();
+        });
       }
     });
   }
   delete(id) {
     console.log('delete called ', id);
-    this.cafeService.deleteCafe(id).subscribe();
+    this.cafeService.deleteCafe(id).subscribe(() => {
+      this.cafeService.getCafes().subscribe();
+    });
   }
 }

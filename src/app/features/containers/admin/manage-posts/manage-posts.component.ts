@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { ManagePostsService } from '../services/manage-posts.service';
+import { IPost, Post } from '../../../data-models/posts';
 @Component({
   selector: 'app-manage-posts',
   templateUrl: './manage-posts.component.html',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ManagePostsComponent implements OnInit {
 
-  constructor() { }
+  constructor(public postService: ManagePostsService) { }
 
   ngOnInit() {
+    this.postService.getPosts().subscribe();
+  }
+
+  delete(id) {
+    console.log('delete called ', id);
+    this.postService.deletePost(id).subscribe(() => {
+      this.postService.getPosts().subscribe();
+    });
   }
 
 }
