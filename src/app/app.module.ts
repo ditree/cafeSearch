@@ -17,12 +17,11 @@ import { PageNotfoundComponent } from './utils/components/page-notfound/page-not
 import { LoaderComponent } from './utils/components/loader/loader.component';
 import { SearchByNameComponent } from './features/containers/search/search-by-name/search-by-name.component';
 import { SearchByLocationComponent } from './features/containers/search/search-by-location/search-by-location.component';
-import { CafeListComponent } from './features/containers/search/cafe-list/cafe-list.component';
 import { CafeDetailComponent } from './features/containers/search/cafe-detail/cafe-detail.component';
-import { PostListComponent } from './features/containers/search/post-list/post-list.component';
 import { PostDetailComponent } from './features/containers/search/post-detail/post-detail.component';
 import { ModalErrorComponent } from './core/components/modal-error/modal-error.component';
 import { SearchComponent } from './features/containers/search/search/search.component';
+import { SearchService } from './features/containers/search/services/search.service';
 
 @NgModule({
   declarations: [
@@ -32,9 +31,7 @@ import { SearchComponent } from './features/containers/search/search/search.comp
     LoginComponent,
     SearchByNameComponent,
     SearchByLocationComponent,
-    CafeListComponent,
     CafeDetailComponent,
-    PostListComponent,
     PostDetailComponent,
     ModalErrorComponent,
     SearchComponent
@@ -51,7 +48,9 @@ import { SearchComponent } from './features/containers/search/search/search.comp
     SharedModule,
     NgbModule.forRoot()
   ],
-  providers: [],
+  providers: [
+    SearchService
+  ],
   entryComponents: [
     ModalErrorComponent
   ],

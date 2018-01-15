@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ManagePostsService } from '../services/manage-posts.service';
 import { IPost, Post } from '../../../data-models/posts';
+import { DatePipe } from '@angular/common';
+
 @Component({
   selector: 'app-manage-posts',
   templateUrl: './manage-posts.component.html',

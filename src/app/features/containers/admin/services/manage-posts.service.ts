@@ -90,6 +90,7 @@ export class ManagePostsService {
     .map((value, key) => {
       return {title: key, details: value};
     })
+    .orderBy('title', 'asc')
     .value();
    }
 

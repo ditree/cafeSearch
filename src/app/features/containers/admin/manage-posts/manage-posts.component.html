@@ -2,12 +2,13 @@
   <app-data-loader [loading]="postService.listLoading">  
     <mat-accordion>
         <mat-expansion-panel *ngFor="let group of postService.groupedList; let i = index; trackBy i;">
-            <mat-expansion-panel-header> {{group.title}} </mat-expansion-panel-header>
+            <mat-expansion-panel-header> <strong>{{group.title}}</strong> </mat-expansion-panel-header>
             <div *ngFor="let detail of group.details; let j = index; trackBy j;">
-              <span class="name">{{detail.user.name}}</span><span class="rating">{{detail.rating}}</span><br/>
+              <span class="left-side">{{detail.user.name}}</span><span class="right-side">{{detail.rate}}</span>
+              <br/><br/>
               <p>{{detail.text}}</p>
-              Phone: <span class="phone">{{detail.user.phone}}</span>Email: <span class="email">{{detail.user.email}}</span><br/>
-              <span>{{detail.createdAt}}</span>
+              <span class="left-side">Phone:  {{detail.user.phone}}     Email: {{detail.user.email}}</span>
+              <span class="right-side">{{detail.createdAt | date : 'dd/MM/yyyy'}}</span><br/>
               <mat-action-row>
                   <button mat-raised-button color="warn" (click)="delete(detail.id)">Delete</button>
               </mat-action-row>
