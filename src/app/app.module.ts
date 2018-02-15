@@ -22,7 +22,8 @@ import { PostDetailComponent } from './features/containers/search/post-detail/po
 import { ModalErrorComponent } from './core/components/modal-error/modal-error.component';
 import { SearchComponent } from './features/containers/search/search/search.component';
 import { SearchService } from './features/containers/search/services/search.service';
-
+import { AgmCoreModule } from '@agm/core';
+import { AgmSnazzyInfoWindowModule } from '@agm/snazzy-info-window';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,7 +47,14 @@ import { SearchService } from './features/containers/search/services/search.serv
     AppRoutingModule,
     HttpServerModule,
     SharedModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyAG5wtDTPZIhhEac8P0g-bbcZrjvzRwUyM',
+      libraries: ['places', 'geometry'],
+      region: 'by',
+      language: 'ru'
+    }),
+    AgmSnazzyInfoWindowModule
   ],
   providers: [
     SearchService

@@ -1,0 +1,80 @@
+.cafe-container {
+    margin: auto;
+    width: 80%;
+    padding: 10px;
+}
+.search-container {
+    padding-top: 50px;
+    padding-bottom:50px; 
+    margin: auto;
+    width: 70%;
+}
+.search-container > * {
+    width: 100%;
+}
+
+.cafe-list:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.googlemap {
+    width: 50%;
+    float: left;
+}
+.list {
+    width: 50%;
+    float: left;
+}
+agm-map {
+    height: 450px;
+}
+/*.locate {
+    background: url(/assets/images/locate.png) no-repeat center;
+    min-height: 450px;
+    vertical-align: center;
+}
+.locate h2 {
+    color: grey;
+}*/
+mat-list {
+    max-height: 450px;
+    max-width: 95%;
+    overflow-y: scroll;
+}
+
+mat-list-item:hover {
+    background-color: #DCDCDC;
+}
+
+mat-list-item > h3 {
+    float: left;
+    font-weight: bold;
+}
+mat-list-item > p {
+    float: left;
+}
+.mat-list-text::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.locate {
+    position: relative;
+}
+.locate h2 {
+    padding-top: 165px;
+    position: relative;
+    z-index: 2;
+    color: grey;
+} 
+.locate img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+    opacity: 0.2;
+    margin-top: -50px;
+}

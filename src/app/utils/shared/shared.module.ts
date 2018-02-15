@@ -9,6 +9,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatIconModule} from '@angular/material/icon';
 import {MatCardModule} from '@angular/material/card';
+import {MatListModule} from '@angular/material/list';
 @NgModule({
   imports: [
     CommonModule,
@@ -19,7 +20,8 @@ import {MatCardModule} from '@angular/material/card';
     MatDialogModule,
     MatExpansionModule,
     MatIconModule,
-    MatCardModule
+    MatCardModule,
+    MatListModule
   ],
   exports: [
     CommonModule,
@@ -30,7 +32,8 @@ import {MatCardModule} from '@angular/material/card';
     MatDialogModule,
     MatExpansionModule,
     MatIconModule,
-    MatCardModule
+    MatCardModule,
+    MatListModule
   ]// ,
   // declarations: [LoaderComponent]
 })

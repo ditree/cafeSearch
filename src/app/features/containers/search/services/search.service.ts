@@ -4,13 +4,35 @@ import { Observable } from 'rxjs/Rx';
 import { HttpServerService } from '../../../../core/http-server/http-server.service';
 import { ICafe, Cafe } from '../../../data-models/cafes';
 import * as _ from 'lodash';
+import { LatLngBounds, LatLng } from '@agm/core/services/google-maps-types';
+
+export interface ILocation {
+  lat: number;
+  lng: number;
+}
+/*export class LatLngImpl implements LatLng {
+  private _lat: number;
+  private _lng: number;
+  'constructor'(lat: number, lng: number) {
+    this._lat = lat;
+    this._lng = lng;
+  }
+  lat() { return this._lat; }
+  lng() { return this._lng; }
+}*/
+
 @Injectable()
 export class SearchService {
   cafePromise: any = {};
   cafeList: ICafe[] = [];
   filteredList: ICafe[] = [];
+  markersList: any[] = [];
   listLoading = false;
   searchValue = '';
+  // searchLocation = '';
+  location: ILocation;
+  place = '';
+  coordinates: LatLng;
   constructor(private httpServer: HttpServerService) { }
 
   getCafes(): Observable<ICafe[]> {
@@ -78,4 +100,77 @@ export class SearchService {
       }
       console.log('filtered list', this.filteredList);
    }
+
+   getLocation() {
+     return this.location;
+   }
+   setLocation(val: ILocation) {
+    // const temp = new LatLngImpl();
+    // temp.constructor(val.lat, val.lng);
+    // this.coordinates = <LatLng>temp;
+    this.location = _.cloneDeep(val);
+   }
+   getPlace() {
+     return  this.place;
+   }
+   setPlace(val: string) {
+     this.place = val;
+   }
+
+   search(bounds: LatLngBounds, isInit: boolean) {
+      if (isInit) {
+        this.markersList.length = 0;
+        this.markersList = this.filterMarkers(bounds);
+      }
+    }
+
+  filterMarkers(bounds: LatLngBounds) {
+    const sortedList: any[] = this.sortMarkers();
+    const containList: any[] = this.isContain(sortedList, bounds);
+
+    /*if (filteredList.length === 0) {
+        bounds.extend(sortedList[0].LatLng); // get the first closest
+        vm.map.fitBounds(bounds);
+        vm.map.setCenter(bounds.getCenter());
+        filteredList = isContain(sortedList, vm.map.getBounds());
+    }*/
+    return containList;
+  }
+
+ sortMarkers() {
+    const currentPosition = new google.maps.LatLng(this.location.lat, this.location.lng);
+    let sortedList: any[] = [];
+    // const temp = new LatLngImpl();
+    // let locObj: LatLng;
+    let distance: any;
+    _.forEach(this.cafeList, function(value, key){
+        // temp.constructor(value.position.lat, value.position.lng);
+        // locObj = <LatLng>temp;
+        distance = new google.maps.LatLng(value.position.lat, value.position.lng);
+        sortedList.push(value);
+        sortedList[key].distance = _.round(google.maps.geometry.spherical.computeDistanceBetween(distance, currentPosition) / 1000, 1);
+        // sortedList[key].LatLng = locObj;
+    });
+
+    sortedList = _(sortedList)
+        .orderBy('distance', 'asc')
+        .value();
+
+
+    return sortedList;
 }
+
+  isContain(sortedList: any[], bounds: LatLngBounds): any[] {
+      const containList: any[] = [];
+
+      _.forEach(sortedList, function(value, key){
+          if (bounds.contains(<LatLng>sortedList[key].position)) {
+              containList.push(sortedList[key]);
+          }
+      });
+
+      return containList;
+  }
+
+}
+

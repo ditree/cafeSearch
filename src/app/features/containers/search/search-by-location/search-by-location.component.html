@@ -1,3 +1,63 @@
-<p>
-  search-by-location works!
-</p>
+<div class="cafe-container">
+  <app-loader [loading]="searchService.listLoading">  
+  <div class="search-container">
+      <mat-form-field>
+          <input type="text" placeholder="Search" aria-label="Name" matInput 
+          [formControl]="searchControl" #search autofocus autocorrect="off">
+          <mat-icon matSuffix svgIcon="search"></mat-icon>
+      </mat-form-field>
+      
+  </div>
+
+  <div class="cafe-list">
+      
+    <div class="list">
+      <div *ngIf="searchService.markersList.length==0" class="locate">
+        <h2>Please enter a location</h2>
+        <img src="/assets/images/locate.png"/>
+      </div>
+      <mat-list *ngIf="searchService.markersList.length > 0">
+          <mat-list-item *ngFor="let detail of searchService.markersList; let i = index; trackBy i;">
+            <h3 matLine>{{detail.title}}</h3>
+            <p matLine><strong>Address:</strong>
+              <span style="padding-left:5px;">
+                <span *ngIf="detail.address.unit!==''">{{detail.address.unit}} - </span>
+                <span *ngIf="detail.address.house!==''">{{detail.address.house}} </span>
+                <span *ngIf="detail.address.street!==''">{{detail.address.street}}, </span>
+                <span *ngIf="detail.address.city!==''">{{detail.address.city}}</span>
+              </span><br/>
+              <span><strong>Distance:</strong> {{detail.distance}} km</span>            
+            </p>
+            <span style="float:right; margin-top: -10px;"><a mat-raised-button [routerLink]="['/search/cafe/'+detail.id]">DETAILS</a></span>
+          </mat-list-item>
+      </mat-list>
+      </div>
+      <div class="googlemap">
+     <!-- <agm-map [latitude]="53.88" [longitude]="28.44" [scrollwheel]="false" [zoom]="zoom" (boundsChange)="setBounds($event)">
+        <agm-marker *ngIf="isDefined" [latitude]="location.lat" [longitude]="location.lng" [iconUrl]="pathToIcon"></agm-marker>
+        <agm-marker *ngFor="let detail of searchService.markersList; let i = index; trackBy i;" [latitude]="detail.position.lat" [longitude]="detail.position.lng"></agm-marker>
+      </agm-map>-->
+      <agm-map #gm [latitude]="location.lat" [longitude]="location.lng" [scrollwheel]="false" [zoom]="zoom" (boundsChange)="setBounds($event)">
+        <agm-marker *ngIf="isDefined" [latitude]="location.lat" [longitude]="location.lng" [iconUrl]="pathToIcon"></agm-marker>
+        <agm-marker *ngFor="let detail of searchService.markersList; let i = index; trackBy i;" [latitude]="detail.position.lat" [longitude]="detail.position.lng">
+            <agm-snazzy-info-window #iw [padding]="5" [fontSize]="10"
+            [isOpen]="false" [latitude]="detail.position.lat" [longitude]="detail.position.lng" [closeWhenOthersOpen]="true">
+                <ng-template>
+                  <p><strong>{{detail.title}}</strong></p>
+                  <p><strong>Address:</strong>
+                      <span *ngIf="detail.address.house!==''">{{detail.address.house}} </span>
+                      <span *ngIf="detail.address.street!==''">{{detail.address.street}} </span>
+                   </p>
+                   <p> 
+                    <span><strong>Distance:</strong> {{detail.distance}} km</span>  
+                    <span><a [routerLink]="['/search/cafe/'+detail.id]">DETAILS</a></span>          
+                  </p>
+                  
+                </ng-template>
+              </agm-snazzy-info-window>
+        </agm-marker>
+      </agm-map>
+     </div>
+  </div>
+  </app-loader>
+  </div>
