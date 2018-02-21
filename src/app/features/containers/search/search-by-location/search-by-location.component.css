@@ -39,7 +39,6 @@ agm-map {
 }*/
 mat-list {
     max-height: 450px;
-    max-width: 95%;
     overflow-y: scroll;
 }
 
@@ -60,6 +59,13 @@ mat-list-item > p {
     display: table;
 }
 
+.titleWindow {
+    max-width: 90%;
+}
+
+.si-content {
+    min-width: 190px;
+}
 .locate {
     position: relative;
 }
@@ -75,6 +81,6 @@ mat-list-item > p {
     top: 0;
     width: 100%;
     height: auto;
-    opacity: 0.2;
-    margin-top: -50px;
+    opacity: 0.1;
+    margin-top: -10px;
 }

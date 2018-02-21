@@ -32,7 +32,9 @@ export class SearchService {
   // searchLocation = '';
   location: ILocation;
   place = '';
-  coordinates: LatLng;
+  expandedBounds: any = null;
+  isAddressUpdated = false;
+  // coordinates: LatLng;
   constructor(private httpServer: HttpServerService) { }
 
   getCafes(): Observable<ICafe[]> {
@@ -115,6 +117,7 @@ export class SearchService {
    }
    setPlace(val: string) {
      this.place = val;
+     this.isAddressUpdated = true;
    }
 
    search(bounds: LatLngBounds, isInit: boolean) {
@@ -128,12 +131,15 @@ export class SearchService {
     const sortedList: any[] = this.sortMarkers();
     const containList: any[] = this.isContain(sortedList, bounds);
 
-    /*if (filteredList.length === 0) {
-        bounds.extend(sortedList[0].LatLng); // get the first closest
-        vm.map.fitBounds(bounds);
-        vm.map.setCenter(bounds.getCenter());
-        filteredList = isContain(sortedList, vm.map.getBounds());
-    }*/
+    if (containList.length === 0 && this.isAddressUpdated) {
+        bounds.extend(<LatLng>sortedList[0].position); // get the first closest
+        this.expandedBounds = bounds;
+        this.isAddressUpdated = false;
+        // vm.map.fitBounds(bounds);
+        // vm.map.setCenter(bounds.getCenter());
+        // containList = this.isContain(sortedList, bounds);
+        // console.log('updated list', containList);
+    }
     return containList;
   }
 
