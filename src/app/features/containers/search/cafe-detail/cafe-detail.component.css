@@ -2,4 +2,99 @@
     margin: auto;
     width: 80%;
     padding: 10px;
+    margin-top: 20px;
+    padding-top: 30px;
+}
+
+.cafe-detail::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.googlemap {
+    width: 50%;
+    float: left;
+}
+.info {
+    width: 50%;
+    float: left;
+}
+agm-map {
+    height: 300px;
+}
+
+.back {
+    float: left;
+}
+.back::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.photo {
+    max-height: 300px;
+    margin: auto;
+}
+
+.post-container {
+    position: relative;
+    margin: auto;
+    width: 80%;
+    padding: 10px;
+}
+.left-side {
+    position: absolute;
+    left: 35px;
+    text-align: left;
+    width: 80px;
+}
+.middle-side {
+    position: absolute;
+    left: 335px;
+    text-align: left;
+    width: 100px;
+}
+.right-side {
+    position: absolute;
+    text-align: right;
+    right: 40px;
+    width: 200px;
+}
+.details {
+    margin-top: 30px;
+    text-align: left;
+    display: block;
+}
+.details div:nth-child(1) {
+    margin-top: 30px;
+    width: 30%;
+    float: left;
+}
+.details div:nth-child(2) {
+    margin-top: 30px;
+    width: 30%;
+    float: left;
+}
+.details div:nth-child(3) {
+    margin-top: 30px;
+    width: 40%;
+    float: left;
+}
+.details p {
+    font-size: 18px;
+    text-decoration: underline;
+}
+
+.details span {
+    font-size: 14px;
+    text-decoration: none;
+}
+.details::after {
+    clear: both;
+    display: table;
+    content: "";
+}
+.post {
+    margin: 20px 0px;
 }

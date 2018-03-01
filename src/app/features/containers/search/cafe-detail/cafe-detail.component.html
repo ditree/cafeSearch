@@ -1,4 +1,71 @@
 <div class="detail-container">
-    <button mat-raised-button color="basic"
-    (click)="goBack()"><< Back</button>
+    <div class="back"><button mat-raised-button color="primary"
+    (click)="goBack()">&laquo; Back</button></div>
+    <app-loader [loading]="searchDetailsService.isLoading">  
+             
+        <div *ngIf="!isEmpty(searchDetailsService.cafeDetail)" class="cafe-detail">
+            <h2 style="margin-bottom:20px;">{{searchDetailsService.cafeDetail.title}}</h2>
+                      
+            <div class="googlemap">
+                <agm-map [latitude]="searchDetailsService.cafeDetail.position.lat" [longitude]="searchDetailsService.cafeDetail.position.lng" [scrollwheel]="false" 
+                [zoom]="zoom">
+                <agm-marker [latitude]="searchDetailsService.cafeDetail.position.lat" [longitude]="searchDetailsService.cafeDetail.position.lng"></agm-marker>
+                </agm-map>
+           </div>
+
+           <div class="info">
+                <img class="photo" [src]="searchDetailsService.cafeDetail.photo" alt="photo"/>
+           </div>
+           <div class="details">
+               <div>
+                <p><strong>Contact:</strong><br/>
+                    <span><strong>Phone:</strong> {{searchDetailsService.cafeDetail.phone}}</span><br/>
+                    <span><strong>Email:</strong> {{searchDetailsService.cafeDetail.email}}</span><br/>
+                    <span><strong>Website:</strong> {{searchDetailsService.cafeDetail.website}}</span><br/>
+                </p>
+                </div>
+                <div>
+                <p><strong>Address:</strong><br/>
+                    <span *ngIf="searchDetailsService.cafeDetail.address.unit!==''">{{searchDetailsService.cafeDetail.address.unit}} - </span>
+                    <span *ngIf="searchDetailsService.cafeDetail.address.house!==''">{{searchDetailsService.cafeDetail.address.house}} </span>
+                    <span *ngIf="searchDetailsService.cafeDetail.address.street!==''">{{searchDetailsService.cafeDetail.address.street}}, </span>
+                    <span *ngIf="searchDetailsService.cafeDetail.address.city!==''">{{searchDetailsService.cafeDetail.address.city}}</span>
+                </p>
+                </div>
+                <div>
+                <p><strong>Schedule:</strong><br/>
+                    <span><strong>Monday:</strong> {{searchDetailsService.cafeDetail.schedule.mn}}</span>
+                    <span><strong>Tuesday:</strong> {{searchDetailsService.cafeDetail.schedule.tu}}</span>
+                    <span><strong>Wednesday:</strong> {{searchDetailsService.cafeDetail.schedule.we}}</span>
+                    <span><strong>Thursday:</strong> {{searchDetailsService.cafeDetail.schedule.th}}</span>
+                    <span><strong>Friday:</strong> {{searchDetailsService.cafeDetail.schedule.fr}}</span>
+                    <span><strong>Saturday:</strong> {{searchDetailsService.cafeDetail.schedule.sa}}</span>
+                    <span><strong>Sanday:</strong> {{searchDetailsService.cafeDetail.schedule.su}}</span>
+                </p>
+                </div>
+           </div>
+           <div style="text-align:left; padding-left: 110px; margin: 20px 0px;">
+               {{searchDetailsService.cafeDetail.rating}}
+               <button style="margin-left:610px;"
+                mat-raised-button color="accent" (click)="openModal()">Write review</button>
+            </div>
+            <div>
+          <div class="post-container">
+               <mat-accordion>
+                    <mat-expansion-panel>
+                            <mat-expansion-panel-header> <mat-panel-title>Reviews</mat-panel-title> </mat-expansion-panel-header>
+                            <div class="post" *ngFor="let detail of searchDetailsService.postList; let i = index; trackBy i;">
+                              <span class="left-side">{{detail.user.name}}</span>
+                              <span class="middle-side">{{detail.createdAt | date : 'dd/MM/yyyy'}}</span>
+                              <span class="right-side">{{detail.rate}}</span>
+                              <br/><br/>
+                              <p>{{detail.text}}</p>
+                              
+                            </div>
+                    </mat-expansion-panel>
+                </mat-accordion>
+          </div>
+          </div>
+        </div>
+    </app-loader>
 </div>

@@ -33,7 +33,7 @@
                       <span style="padding-left: 5px;"><strong>{{detail.distance}}&nbsp;km</strong></span>
                    </p>
                    <p> 
-                    <span><a [routerLink]="['/search/cafe/'+detail.id]">DETAILS</a></span>          
+                    <span><a [routerLink]="['/search/cafe/', detail.id]">DETAILS</a></span>          
                   </p>
                   
                 </ng-template>
@@ -58,7 +58,7 @@
               </span><br/>
               <span><strong>Distance:</strong> {{detail.distance}} km</span>            
             </p>
-            <span style="float:right; margin-top: -10px;"><a mat-raised-button [routerLink]="['/search/cafe/'+detail.id]">DETAILS</a></span>
+            <span style="float:right; margin-top: -10px;"><a mat-raised-button [routerLink]="['/search/cafe/',detail.id]">DETAILS</a></span>
           </mat-list-item>
       </mat-list>
       </div>

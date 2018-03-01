@@ -1,3 +1,37 @@
-<p>
-  post-detail works!
-</p>
+<h1 mat-dialog-title> {{data.post.cafeID.title}} review</h1>
+<div mat-dialog-content>
+    <div>
+        <mat-form-field hideRequiredMarker="false" floatLabel="auto">
+            <input type="text" matInput placeholder="Rate" name="rate"
+             tabindex="0" [(ngModel)]="data.post.rate" required pattern="[1-5]" #rate="ngModel">
+             <mat-error *ngIf="rate.invalid">Rate is invalid</mat-error>
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field hideRequiredMarker="false" floatLabel="auto">
+            <textarea type="text" matInput placeholder="Text" name="text"
+             tabindex="0" [(ngModel)]="data.post.text" required #text="ngModel"
+             matTextareaAutosize matAutosizeMinRows="2" matAutosizeMaxRows="20"></textarea>
+             <mat-error *ngIf="text.invalid">Text is required</mat-error>
+        </mat-form-field>
+    </div>
+    <div> <br/>Contact <br/> <br/>
+            <mat-form-field floatLabel="auto">
+                <input type="text" matInput placeholder="Name" name="name" 
+                  tabindex="0" [(ngModel)]="data.post.user.name">
+            </mat-form-field>
+            <mat-form-field floatLabel="auto">
+                <input type="text" matInput placeholder="Phone" name="phone" 
+                  tabindex="0" [(ngModel)]="data.post.user.phone">
+            </mat-form-field>
+            <mat-form-field floatLabel="auto">
+                <input type="text" matInput placeholder="Email" name="email" 
+                  tabindex="0" [(ngModel)]="data.post.user.email">
+            </mat-form-field>
+    </div>
+
+</div>
+<div mat-dialog-actions>
+    <button mat-button [mat-dialog-close]="data.post" tabindex="2">Ok</button>
+    <button mat-button (click)="onCancelClick()" tabindex="-1">Cancel</button>
+</div>

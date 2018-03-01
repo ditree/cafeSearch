@@ -1,4 +1,5 @@
 const Post = require('../models/post.model');
+const Cafe = require('../models/cafe.model');
 const httpStatus = require('http-status');
 const APIError = require('../helpers/APIError');
 
@@ -30,13 +31,39 @@ function create(req, res) {
         post.user.phone =  req.body.user.phone ?  req.body.user.phone : '';
     }
    
-    post.save((err) => {
+    post.save((err, result) => {
         if (err)
             res.send(err);
-
+        updateAverage(result.cafeID);
         res.json({ message: 'Post created!' });
     });
   
+}
+
+function updateAverage(id) {
+    Post.aggregate([
+        {
+            $match: {
+                cafeID: {
+                    $eq: id
+                }
+            }
+        }, {
+            $group: {
+                _id: id,
+                average: {$avg: '$rate'}
+            }
+        }
+    ], function(err, result) {
+    
+         Cafe.findOneAndUpdate({_id: id}, {$set:{rating: result[0].average}}, {new: true}, function(err, doc){
+             if(err) {
+                 console.log('err', err);
+             }
+         }); 
+            
+    });
+      
 }
 
  function list(req, res){
@@ -55,7 +82,7 @@ function create(req, res) {
     }, (err, post) => {
         if (err)
             res.status(httpStatus.NOT_FOUND).send(err);
-
+        updateAverage(post.cafeID);
         res.json({ message: 'Successfully deleted' });
     });
  }

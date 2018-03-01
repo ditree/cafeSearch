@@ -48,15 +48,18 @@ export class SearchByLocationComponent implements OnInit {
      }
 
   ngOnInit() {
+    let plc = '';
     if (_.isEmpty(this.searchService.cafeList)) {
       this.searchService.getCafes().subscribe();
     }
     if (this.searchService.place !== '' && this.searchService.place !== undefined) {
-      this.searchControl.setValue(this.searchService.getPlace());
+      plc = this.searchService.getPlace();
+      this.searchControl.setValue(plc);
+      this.searchService.setPlace(plc); // just to reset flag
     }
     if (this.searchService.location) {
       this.location = _.cloneDeep(this.searchService.getLocation());
-      this.zoom = 13;
+      this.zoom = 15;
       this.isDefined = true;
     }
     this.mapsAPILoader.load().then(() => {
@@ -79,7 +82,7 @@ export class SearchByLocationComponent implements OnInit {
           this.isDefined = true;
           this.place = place.formatted_address;
           this.setPlace(this.location, this.place);
-          this.zoom = 13;
+          this.zoom = 15;
         });
       });
     });
@@ -97,7 +100,7 @@ export class SearchByLocationComponent implements OnInit {
       navigator.geolocation.getCurrentPosition((position) => {
         this.location.lat = position.coords.latitude;
         this.location.lng = position.coords.longitude;
-        this.zoom = 13;
+        this.zoom = 15;
       });
     }
   }

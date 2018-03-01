@@ -22,6 +22,7 @@ import { PostDetailComponent } from './features/containers/search/post-detail/po
 import { ModalErrorComponent } from './core/components/modal-error/modal-error.component';
 import { SearchComponent } from './features/containers/search/search/search.component';
 import { SearchService } from './features/containers/search/services/search.service';
+import { SearchDetailsService } from './features/containers/search/services/search-details.service';
 import { AgmCoreModule } from '@agm/core';
 import { AgmSnazzyInfoWindowModule } from '@agm/snazzy-info-window';
 @NgModule({
@@ -57,10 +58,12 @@ import { AgmSnazzyInfoWindowModule } from '@agm/snazzy-info-window';
     AgmSnazzyInfoWindowModule
   ],
   providers: [
-    SearchService
+    SearchService,
+    SearchDetailsService
   ],
   entryComponents: [
-    ModalErrorComponent
+    ModalErrorComponent,
+    PostDetailComponent
   ],
   bootstrap: [AppComponent]
 })

@@ -2,6 +2,7 @@ const Promise = require('bluebird');
 const mongoose = require('mongoose');
 const httpStatus = require('http-status');
 const APIError = require('../helpers/APIError');
+const Cafe = require('./cafe.model');
 
 const PostSchema = new mongoose.Schema({
     cafeID: {
@@ -30,6 +31,15 @@ PostSchema.pre('save', function(next){
     if(!this.createdAt) {
         this.createdAt = currentDate;
     }
+    next();
+});
+
+PostSchema.post('save', function(doc, next){
+   
+next();
+});
+
+PostSchema.post('remove', function(doc, next){
     next();
 });
 

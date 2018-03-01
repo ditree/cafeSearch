@@ -92,6 +92,14 @@ CafeSchema.statics = {
         return this.find()
         .sort({ title: 1 })
         .exec();
+    },
+
+    updateAverage(id) {
+        this.findOneAndUpdate({id: doc.cafeID}, {$set:{rating: rateByCafe.rating}}, {new: true}, function(err, doc){
+            if(doc){
+                 console.log(doc);
+            }
+        });
     }
 };
 
