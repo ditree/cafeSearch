@@ -98,3 +98,6 @@ agm-map {
 .post {
     margin: 20px 0px;
 }
+.checked {
+    color: orange;
+}

@@ -12,6 +12,7 @@ import { MapsAPILoader } from '@agm/core';
 import * as _ from 'lodash';
 import { LatLngBounds, LatLng } from '@agm/core/services/google-maps-types';
 import { AgmSnazzyInfoWindow } from '@agm/snazzy-info-window';
+// import { resolve } from 'q';
 @Component({
   selector: 'app-search-by-location',
   templateUrl: './search-by-location.component.html',
@@ -29,6 +30,7 @@ export class SearchByLocationComponent implements OnInit {
   public place: string;
   public isDefined = false;
   public pathToIcon = 'assets/images/blue-marker.png';
+
   @ViewChild('search')
   public searchElementRef: ElementRef;
  /* @ViewChildren(AgmSnazzyInfoWindow) snazzyWindowChildren: QueryList<AgmSnazzyInfoWindow>
@@ -45,6 +47,9 @@ export class SearchByLocationComponent implements OnInit {
         iconRegistry.addSvgIcon(
         'search',
         sanitizer.bypassSecurityTrustResourceUrl('assets/images/ic_search_black_24px.svg'));
+        iconRegistry.addSvgIcon(
+          'my_location',
+          sanitizer.bypassSecurityTrustResourceUrl('assets/images/ic_my_location_black_24px.svg'));
      }
 
   ngOnInit() {
@@ -98,9 +103,19 @@ export class SearchByLocationComponent implements OnInit {
   private setCurrentPosition() {
     if ('geolocation' in navigator) {
       navigator.geolocation.getCurrentPosition((position) => {
-        this.location.lat = position.coords.latitude;
-        this.location.lng = position.coords.longitude;
-        this.zoom = 15;
+        this.geoCoderCall().then((res) => {
+          this.location.lat = position.coords.latitude;
+          this.location.lng = position.coords.longitude;
+          this.isDefined = true;
+          this.setPlace(this.location, res.toString());
+          this.zoom = 15;
+        }, err => {
+          this.location.lat = position.coords.latitude;
+          this.location.lng = position.coords.longitude;
+          this.isDefined = true;
+          this.setPlace(this.location, '');
+          this.zoom = 15;
+        });
       });
     }
   }
@@ -110,5 +125,25 @@ export class SearchByLocationComponent implements OnInit {
     this.searchService.setLocation(loc);
     this.searchService.setPlace(place);
   }
+
+  geoCoderCall() {
+    const geocoder = new google.maps.Geocoder();
+    const promise = new Promise((resolve, reject) => {
+      geocoder.geocode({'location': this.location}, function(results, status){
+          if (status === google.maps.GeocoderStatus.OK) {
+              this.message = '';
+              console.log('results[0]', results[0].formatted_address);
+              resolve(results[0].formatted_address);
+          } else {
+              this.message = 'Not valid address';
+              reject(status);
+          }
+
+      });
+    });
+    return promise;
+
+}
+
 
 }

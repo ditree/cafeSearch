@@ -6,7 +6,9 @@
           [formControl]="searchControl" #search autofocus autocorrect="off">
           <mat-icon matSuffix svgIcon="search"></mat-icon>
       </mat-form-field>
-      
+      <button mat-icon-button color="primary" (click)="setCurrentPosition()">
+        <mat-icon matSuffix svgIcon="my_location"></mat-icon>
+      </button>
   </div>
 
   <div class="cafe-list">

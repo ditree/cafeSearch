@@ -9,8 +9,11 @@
     margin: auto;
     width: 70%;
 }
-.search-container > * {
-    width: 100%;
+.search-container > mat-form-field {
+    width: 90%;
+}
+.search-container > button {
+    width: 8%;
 }
 
 .cafe-list:after {

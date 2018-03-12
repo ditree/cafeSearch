@@ -45,7 +45,13 @@
                 </div>
            </div>
            <div style="text-align:left; padding-left: 110px; margin: 20px 0px;">
-               {{searchDetailsService.cafeDetail.rating}}
+                <span *ngIf="searchDetailsService.cafeDetail.rating >= 1" class="fa fa-star checked"></span>
+                <span *ngIf="searchDetailsService.cafeDetail.rating >= 2" class="fa fa-star checked"></span>
+                <span *ngIf="searchDetailsService.cafeDetail.rating >= 3" class="fa fa-star checked"></span>
+                <span *ngIf="searchDetailsService.cafeDetail.rating >= 4" class="fa fa-star checked"></span>
+                <span *ngIf="searchDetailsService.cafeDetail.rating == 5" class="fa fa-star checked"></span>
+                <span *ngIf="(searchDetailsService.cafeDetail.rating % 1) >= 0.5" class="fa fa-star-half checked"></span>
+
                <button style="margin-left:610px;"
                 mat-raised-button color="accent" (click)="openModal()">Write review</button>
             </div>
@@ -57,7 +63,14 @@
                             <div class="post" *ngFor="let detail of searchDetailsService.postList; let i = index; trackBy i;">
                               <span class="left-side">{{detail.user.name}}</span>
                               <span class="middle-side">{{detail.createdAt | date : 'dd/MM/yyyy'}}</span>
-                              <span class="right-side">{{detail.rate}}</span>
+                              <span class="right-side">
+                                <span *ngIf="detail.rate >= 1" class="fa fa-star checked"></span>
+                                <span *ngIf="detail.rate >= 2" class="fa fa-star checked"></span>
+                                <span *ngIf="detail.rate >= 3" class="fa fa-star checked"></span>
+                                <span *ngIf="detail.rate >= 4" class="fa fa-star checked"></span>
+                                <span *ngIf="detail.rate == 5" class="fa fa-star checked"></span>
+                                <span *ngIf="(detail.rate % 1) >= 0.5" class="fa fa-star-half checked"></span>
+                              </span>
                               <br/><br/>
                               <p>{{detail.text}}</p>
                               
