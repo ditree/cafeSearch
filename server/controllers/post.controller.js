@@ -41,6 +41,8 @@ function create(req, res) {
 }
 
 function updateAverage(id) {
+    
+    if(id) {
     Post.aggregate([
         {
             $match: {
@@ -55,15 +57,19 @@ function updateAverage(id) {
             }
         }
     ], function(err, result) {
+        
+        if(result) {
+            Cafe.findOneAndUpdate({_id: id}, {$set:{rating: result[0].average}}, {new: true}, function(err, doc){
+                if(err) {
+                    console.log('err', err);
+                }
+            }); 
+        } else {
+            console.log('err', err);
+        }
     
-         Cafe.findOneAndUpdate({_id: id}, {$set:{rating: result[0].average}}, {new: true}, function(err, doc){
-             if(err) {
-                 console.log('err', err);
-             }
-         }); 
-            
     });
-      
+    }
 }
 
  function list(req, res){
@@ -77,12 +83,17 @@ function updateAverage(id) {
 
  function remove(req, res) {
     // return load(params).then(post => post.remove());
+    var data;
+    Post.findById(req.params.postId, (err, post) => {
+        data = post;
+    });
+
     Post.remove({
         _id: req.params.postId
     }, (err, post) => {
         if (err)
             res.status(httpStatus.NOT_FOUND).send(err);
-        updateAverage(post.cafeID);
+        updateAverage(data.cafeID);
         res.json({ message: 'Successfully deleted' });
     });
  }
