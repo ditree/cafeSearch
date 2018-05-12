@@ -17,7 +17,7 @@ export interface ICafe {
     phone: string;
     email: string;
     website: string;
-    photo: string;
+    photo: [string];
     rating: number;
     schedule: {
         mn: string,
@@ -28,7 +28,7 @@ export interface ICafe {
         sa: string,
         su: string
     };
-
+    description: string;
 }
 
 export class Cafe implements ICafe {
@@ -49,7 +49,7 @@ export class Cafe implements ICafe {
     phone: string;
     email: string;
     website: string;
-    photo: string;
+    photo: [string];
     rating: number;
     schedule: {
         mn: string,
@@ -60,6 +60,7 @@ export class Cafe implements ICafe {
         sa: string,
         su: string
     };
+    description: string;
 
     constructor(cafeInfo?: ICafe) {
         Object.assign(this, cafeInfo);

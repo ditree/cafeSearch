@@ -5,7 +5,11 @@
              
         <div *ngIf="!isEmpty(searchDetailsService.cafeDetail)" class="cafe-detail">
             <h2 style="margin-bottom:20px;">{{searchDetailsService.cafeDetail.title}}</h2>
-                      
+            
+            <div class="carousel">
+                <carousel [sources]="searchDetailsService.cafeDetail.photo" [config]="config" alt="photo"></carousel>
+                <!--<img class="photo" [src]="searchDetailsService.cafeDetail.photo[0]" alt="photo"/>-->
+            </div>          
             <div class="googlemap">
                 <agm-map [latitude]="searchDetailsService.cafeDetail.position.lat" [longitude]="searchDetailsService.cafeDetail.position.lng" [scrollwheel]="false" 
                 [zoom]="zoom">
@@ -14,10 +18,29 @@
            </div>
 
            <div class="info">
-                <img class="photo" [src]="searchDetailsService.cafeDetail.photo" alt="photo"/>
+                <p><strong>Address:</strong><br/>
+                    <span *ngIf="searchDetailsService.cafeDetail.address.unit!==''">{{searchDetailsService.cafeDetail.address.unit}} - </span>
+                    <span *ngIf="searchDetailsService.cafeDetail.address.house!==''">{{searchDetailsService.cafeDetail.address.house}} </span>
+                    <span *ngIf="searchDetailsService.cafeDetail.address.street!==''">{{searchDetailsService.cafeDetail.address.street}}, </span>
+                    <span *ngIf="searchDetailsService.cafeDetail.address.city!==''">{{searchDetailsService.cafeDetail.address.city}}</span>
+                </p>
+                <p><strong>Contact:</strong><br/>
+                    <span><strong>Phone:</strong> {{searchDetailsService.cafeDetail.phone}}</span><br/>
+                    <span><strong>Email:</strong> {{searchDetailsService.cafeDetail.email}}</span><br/>
+                    <span><strong>Website:</strong> {{searchDetailsService.cafeDetail.website}}</span><br/>
+                </p>
+                <p class="schedule"><strong>Schedule:</strong><br/>
+                    <span><strong>Monday:</strong> {{searchDetailsService.cafeDetail.schedule.mn}}</span>
+                    <span><strong>Tuesday:</strong> {{searchDetailsService.cafeDetail.schedule.tu}}</span>
+                    <span><strong>Wednesday:</strong> {{searchDetailsService.cafeDetail.schedule.we}}</span>
+                    <span><strong>Thursday:</strong> {{searchDetailsService.cafeDetail.schedule.th}}</span>
+                    <span><strong>Friday:</strong> {{searchDetailsService.cafeDetail.schedule.fr}}</span>
+                    <span><strong>Saturday:</strong> {{searchDetailsService.cafeDetail.schedule.sa}}</span>
+                    <span><strong>Sanday:</strong> {{searchDetailsService.cafeDetail.schedule.su}}</span>
+                </p>        
            </div>
            <div class="details">
-               <div>
+               <!--<div>
                 <p><strong>Contact:</strong><br/>
                     <span><strong>Phone:</strong> {{searchDetailsService.cafeDetail.phone}}</span><br/>
                     <span><strong>Email:</strong> {{searchDetailsService.cafeDetail.email}}</span><br/>
@@ -42,7 +65,11 @@
                     <span><strong>Saturday:</strong> {{searchDetailsService.cafeDetail.schedule.sa}}</span>
                     <span><strong>Sanday:</strong> {{searchDetailsService.cafeDetail.schedule.su}}</span>
                 </p>
-                </div>
+                </div>-->
+           </div>
+           <div class="about">
+                <p><strong>About us:</strong><br/>
+               <span>{{searchDetailsService.cafeDetail.description}}</span></p>
            </div>
            <div style="text-align:left; padding-left: 110px; margin: 20px 0px;">
                 <span *ngIf="searchDetailsService.cafeDetail.rating >= 1" class="fa fa-star checked"></span>

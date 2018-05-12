@@ -59,7 +59,7 @@ export class SearchService {
              phone: item.phone,
              email: item.email,
              website: item.website,
-             photo: item.photo,
+             photo: item.photo.slice(),
              rating: item.rating,
              schedule: {
                  mn: item.schedule.mn,
@@ -69,7 +69,8 @@ export class SearchService {
                  fr: item.schedule.fr,
                  sa: item.schedule.sa,
                  su: item.schedule.su
-             }
+             },
+             description: item.description
          });
        });
      })

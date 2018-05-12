@@ -25,6 +25,7 @@ import { SearchService } from './features/containers/search/services/search.serv
 import { SearchDetailsService } from './features/containers/search/services/search-details.service';
 import { AgmCoreModule } from '@agm/core';
 import { AgmSnazzyInfoWindowModule } from '@agm/snazzy-info-window';
+import { CarouselModule } from 'angular4-carousel';
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,7 +56,8 @@ import { AgmSnazzyInfoWindowModule } from '@agm/snazzy-info-window';
       region: 'by',
       language: 'ru'
     }),
-    AgmSnazzyInfoWindowModule
+    AgmSnazzyInfoWindowModule,
+    CarouselModule
   ],
   providers: [
     SearchService,

@@ -39,7 +39,7 @@ export class SearchDetailsService {
           phone: result.phone,
           email: result.email,
           website: result.website,
-          photo: result.photo,
+          photo: result.photo.slice(),
           rating: result.rating,
           schedule: {
               mn: result.schedule.mn,
@@ -49,7 +49,8 @@ export class SearchDetailsService {
               fr: result.schedule.fr,
               sa: result.schedule.sa,
               su: result.schedule.su
-          }
+          },
+          description: result.description
       });
        console.log('cafe ', this.cafeDetail);
        this.getPosts(id).subscribe();

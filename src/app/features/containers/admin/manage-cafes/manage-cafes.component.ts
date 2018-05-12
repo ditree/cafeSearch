@@ -37,7 +37,7 @@ export class ManageCafesComponent implements OnInit {
         phone: '',
         email: '',
         website: '',
-        photo: '',
+        photo: [],
         rating: '',
         schedule: {
             mn: '',
@@ -47,7 +47,8 @@ export class ManageCafesComponent implements OnInit {
             fr: '',
             sa: '',
             su: ''
-        }
+        },
+        description: ''
       }, action: 'Add' }
     });
     dialogRef.afterClosed().subscribe(result => {
