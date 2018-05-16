@@ -23,7 +23,7 @@ function create(req, res) {
      cafe.phone = req.body.phone ? req.body.phone : '';
      cafe.email = req.body.email? req.body.email : '';
      cafe.website = req.body.website ? req.body.website : '';
-     cafe.photo = req.body.photo ? req.body.photo : '';
+     cafe.photo = req.body.photo ? req.body.photo.slice() : [];
      cafe.rating = req.body.rating ? req.body.rating : 0.0;
      if (req.body.address) {
          cafe.address.unit = req.body.address.unit ? req.body.address.unit : '';
@@ -46,7 +46,7 @@ function create(req, res) {
         cafe.schedule.sa =  req.body.schedule.sa ?  req.body.schedule.sa : '';
         cafe.schedule.su =  req.body.schedule.su ?  req.body.schedule.su : '';
      } 
-      
+    cafe.description = req.body.description ? req.body.description : '';
     cafe.save((err) => {
         if (err)
             res.send(err);
@@ -62,7 +62,7 @@ function update(req, res) {
         cafe.phone = req.body.phone ? req.body.phone : cafe.phone;
         cafe.email = req.body.email? req.body.email : cafe.email;
         cafe.website = req.body.website ? req.body.website : cafe.website;
-        cafe.photo = req.body.photo ? req.body.photo : cafe.photo;
+        cafe.photo = req.body.photo ? req.body.photo.slice() : [];
         cafe.rating = req.body.rating ? req.body.rating : cafe.rating;
         if (req.body.address) {
             cafe.address.unit = req.body.address.unit ? req.body.address.unit : cafe.address.unit;
@@ -85,7 +85,7 @@ function update(req, res) {
             cafe.schedule.sa =  req.body.schedule.sa ?  req.body.schedule.sa : cafe.schedule.sa;
             cafe.schedule.su =  req.body.schedule.su ?  req.body.schedule.su : cafe.schedule.su;
         } 
-          
+        cafe.description = req.body.description ? req.body.description : ''; 
 
         
         cafe.save((err) => {

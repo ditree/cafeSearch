@@ -14,7 +14,7 @@
           <mat-card-header>
             <mat-card-title><strong>{{detail.title}}</strong></mat-card-title>
           </mat-card-header>
-          <img mat-card-image [src]="detail.photo" alt="photo">
+          <img mat-card-image [src]="detail.photo[0]" alt="photo">
           <mat-card-content>
             <p><strong>Адрес:</strong><br/>
               <span *ngIf="detail.address.unit!==''">{{detail.address.unit}} - </span>

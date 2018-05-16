@@ -35,7 +35,7 @@ var teplo = new Cafe({
     phone: "",
     email: "",
     website: "",
-    photo: "/assets/images/1.тепло.jpg",
+    photo: ["/assets/images/1.тепло.jpg", "/assets/images/1.тепло.jpg"],
     rating: 4.5,
     schedule: {
         mn: "09:00-23:00",
@@ -45,7 +45,8 @@ var teplo = new Cafe({
         fr: "09:00-23:00",
         sa: "09:00-23:00",
         su: "09:00-23:00"
-    }
+    },
+    description: "Lorem ipsum dolor sit amet, suavitate assentior vel eu, an meliore sapientem vel. Iriure luptatum consetetur ut sed, id probo adhuc aeque sed. In duo alienum atomorum intellegam, at mucius tincidunt pri. Eligendi cotidieque cum ne, an harum choro nec. Has lorem petentium cu, et munere accommodare eum.\nNo illud lorem quando sed, sea ornatus eligendi comprehensam ea, quo id laudem periculis. Soleat semper eum ex. Ei est nostro eleifend principes, facer laoreet veritus te nam. Magna gubergren dissentiet ex vel, sapientem abhorreant definitionem at cum, ex mea vidit tamquam honestatis. Et facilisi adipisci sea, ei usu labore mollis. Ne sit delenit salutatus, ei brute hendrerit persecuti sea. Mei dicunt debitis electram et, sea cu illum contentiones delicatissimi, ea usu aeque quaeque percipitur."
 });
 
 teplo.save(function(err){
@@ -101,7 +102,7 @@ var mjata = new Cafe({
     phone: "",
     email: "",
     website: "",
-    photo: "/assets/images/2.мята.jpg",
+    photo: ["/assets/images/2.мята.jpg", "/assets/images/2.мята.jpg"],
     rating: 4.3,
     schedule: {
         mn: "15:00-02:00",
@@ -111,7 +112,8 @@ var mjata = new Cafe({
         fr: "15:00-05:00",
         sa: "15:00-05:00",
         su: "15:00-02:00"
-    }
+    },
+    description: "Lorem ipsum dolor sit amet, suavitate assentior vel eu, an meliore sapientem vel. Iriure luptatum consetetur ut sed, id probo adhuc aeque sed. In duo alienum atomorum intellegam, at mucius tincidunt pri. Eligendi cotidieque cum ne, an harum choro nec. Has lorem petentium cu, et munere accommodare eum.\nNo illud lorem quando sed, sea ornatus eligendi comprehensam ea, quo id laudem periculis. Soleat semper eum ex. Ei est nostro eleifend principes, facer laoreet veritus te nam. Magna gubergren dissentiet ex vel, sapientem abhorreant definitionem at cum, ex mea vidit tamquam honestatis. Et facilisi adipisci sea, ei usu labore mollis. Ne sit delenit salutatus, ei brute hendrerit persecuti sea. Mei dicunt debitis electram et, sea cu illum contentiones delicatissimi, ea usu aeque quaeque percipitur."
 });
 
 mjata.save(function(err){
@@ -168,7 +170,7 @@ var kuhmister = new Cafe({
     phone: "",
     email: "",
     website: "",
-    photo: "/assets/images/3.кухмистр.jpg",
+    photo: ["/assets/images/3.кухмистр.jpg", "/assets/images/3.кухмистр.jpg"],
     rating: 4.5,
     schedule: {
         mn: "12:00-23:00",
@@ -178,7 +180,8 @@ var kuhmister = new Cafe({
         fr: "12:00-23:00",
         sa: "12:00-23:00",
         su: "12:00-23:00"
-    }
+    },
+    description: "Lorem ipsum dolor sit amet, suavitate assentior vel eu, an meliore sapientem vel. Iriure luptatum consetetur ut sed, id probo adhuc aeque sed. In duo alienum atomorum intellegam, at mucius tincidunt pri. Eligendi cotidieque cum ne, an harum choro nec. Has lorem petentium cu, et munere accommodare eum.\nNo illud lorem quando sed, sea ornatus eligendi comprehensam ea, quo id laudem periculis. Soleat semper eum ex. Ei est nostro eleifend principes, facer laoreet veritus te nam. Magna gubergren dissentiet ex vel, sapientem abhorreant definitionem at cum, ex mea vidit tamquam honestatis. Et facilisi adipisci sea, ei usu labore mollis. Ne sit delenit salutatus, ei brute hendrerit persecuti sea. Mei dicunt debitis electram et, sea cu illum contentiones delicatissimi, ea usu aeque quaeque percipitur."
 });
 
 kuhmister.save(function(err){
@@ -234,7 +237,7 @@ var goldenCaffee = new Cafe({
     phone: "",
     email: "",
     website: "",
-    photo: "/assets/images/4.golden_coffe.jpg",
+    photo: ["/assets/images/4.golden_coffe.jpg", "/assets/images/4.golden_coffe.jpg"],
     rating: 4.4,
     schedule: {
         mn: "круглосуточно",
@@ -244,7 +247,8 @@ var goldenCaffee = new Cafe({
         fr: "круглосуточно",
         sa: "круглосуточно",
         su: "круглосуточно"
-    }
+    },
+    description: "Lorem ipsum dolor sit amet, suavitate assentior vel eu, an meliore sapientem vel. Iriure luptatum consetetur ut sed, id probo adhuc aeque sed. In duo alienum atomorum intellegam, at mucius tincidunt pri. Eligendi cotidieque cum ne, an harum choro nec. Has lorem petentium cu, et munere accommodare eum.\nNo illud lorem quando sed, sea ornatus eligendi comprehensam ea, quo id laudem periculis. Soleat semper eum ex. Ei est nostro eleifend principes, facer laoreet veritus te nam. Magna gubergren dissentiet ex vel, sapientem abhorreant definitionem at cum, ex mea vidit tamquam honestatis. Et facilisi adipisci sea, ei usu labore mollis. Ne sit delenit salutatus, ei brute hendrerit persecuti sea. Mei dicunt debitis electram et, sea cu illum contentiones delicatissimi, ea usu aeque quaeque percipitur."
 });
 
 goldenCaffee.save(function(err){
@@ -301,7 +305,7 @@ var salateira = new Cafe({
     phone: "",
     email: "",
     website: "",
-    photo: "/assets/images/5.салатейра.jpg",
+    photo: ["/assets/images/5.салатейра.jpg", "/assets/images/5.салатейра.jpg"],
     rating: 4.4,
     schedule: {
         mn: "10:00-22:00",
@@ -311,7 +315,8 @@ var salateira = new Cafe({
         fr: "10:00-22:00",
         sa: "10:00-22:00",
         su: "10:00-22:00"
-    }
+    },
+    description: "Lorem ipsum dolor sit amet, suavitate assentior vel eu, an meliore sapientem vel. Iriure luptatum consetetur ut sed, id probo adhuc aeque sed. In duo alienum atomorum intellegam, at mucius tincidunt pri. Eligendi cotidieque cum ne, an harum choro nec. Has lorem petentium cu, et munere accommodare eum.\nNo illud lorem quando sed, sea ornatus eligendi comprehensam ea, quo id laudem periculis. Soleat semper eum ex. Ei est nostro eleifend principes, facer laoreet veritus te nam. Magna gubergren dissentiet ex vel, sapientem abhorreant definitionem at cum, ex mea vidit tamquam honestatis. Et facilisi adipisci sea, ei usu labore mollis. Ne sit delenit salutatus, ei brute hendrerit persecuti sea. Mei dicunt debitis electram et, sea cu illum contentiones delicatissimi, ea usu aeque quaeque percipitur."
 });
 
 salateira.save(function(err){
@@ -368,7 +373,7 @@ var loft = new Cafe({
     phone: "",
     email: "",
     website: "",
-    photo: "/assets/images/6.лофт_кафе.jpg",
+    photo: ["/assets/images/6.лофт_кафе.jpg", "/assets/images/6.лофт_кафе.jpg"],
     rating: 4.1,
     schedule: {
         mn: "11:00-00:00",
@@ -378,7 +383,8 @@ var loft = new Cafe({
         fr: "11:00-05:00",
         sa: "11:00-05:00",
         su: "11:00-00:00"
-    }
+    },
+    description: "Lorem ipsum dolor sit amet, suavitate assentior vel eu, an meliore sapientem vel. Iriure luptatum consetetur ut sed, id probo adhuc aeque sed. In duo alienum atomorum intellegam, at mucius tincidunt pri. Eligendi cotidieque cum ne, an harum choro nec. Has lorem petentium cu, et munere accommodare eum.\nNo illud lorem quando sed, sea ornatus eligendi comprehensam ea, quo id laudem periculis. Soleat semper eum ex. Ei est nostro eleifend principes, facer laoreet veritus te nam. Magna gubergren dissentiet ex vel, sapientem abhorreant definitionem at cum, ex mea vidit tamquam honestatis. Et facilisi adipisci sea, ei usu labore mollis. Ne sit delenit salutatus, ei brute hendrerit persecuti sea. Mei dicunt debitis electram et, sea cu illum contentiones delicatissimi, ea usu aeque quaeque percipitur."
 });
 
 loft.save(function(err){
@@ -435,7 +441,7 @@ var kvartira = new Cafe({
     phone: "",
     email: "",
     website: "",
-    photo: "/assets/images/7.квартира_номер_3.jpg",
+    photo: ["/assets/images/7.квартира_номер_3.jpg", "/assets/images/7.квартира_номер_3.jpg"],
     rating: 3.5,
     schedule: {
         mn: "круглосуточно",
@@ -445,7 +451,8 @@ var kvartira = new Cafe({
         fr: "круглосуточно",
         sa: "круглосуточно",
         su: "круглосуточно"
-    }
+    },
+    description: "Lorem ipsum dolor sit amet, suavitate assentior vel eu, an meliore sapientem vel. Iriure luptatum consetetur ut sed, id probo adhuc aeque sed. In duo alienum atomorum intellegam, at mucius tincidunt pri. Eligendi cotidieque cum ne, an harum choro nec. Has lorem petentium cu, et munere accommodare eum.\nNo illud lorem quando sed, sea ornatus eligendi comprehensam ea, quo id laudem periculis. Soleat semper eum ex. Ei est nostro eleifend principes, facer laoreet veritus te nam. Magna gubergren dissentiet ex vel, sapientem abhorreant definitionem at cum, ex mea vidit tamquam honestatis. Et facilisi adipisci sea, ei usu labore mollis. Ne sit delenit salutatus, ei brute hendrerit persecuti sea. Mei dicunt debitis electram et, sea cu illum contentiones delicatissimi, ea usu aeque quaeque percipitur."
 });
 
 kvartira.save(function(err){
@@ -502,7 +509,7 @@ var perfetto = new Cafe({
     phone: "",
     email: "",
     website: "",
-    photo: "/assets/images/8.перфетто.jpg",
+    photo: ["/assets/images/8.перфетто.jpg", "/assets/images/8.перфетто.jpg"],
     rating: 4.3,
     schedule: {
         mn: "12:00-00:00",
@@ -512,7 +519,8 @@ var perfetto = new Cafe({
         fr: "12:00-00:00",
         sa: "12:00-00:00",
         su: "12:00-00:00"
-    }
+    },
+    description: "Lorem ipsum dolor sit amet, suavitate assentior vel eu, an meliore sapientem vel. Iriure luptatum consetetur ut sed, id probo adhuc aeque sed. In duo alienum atomorum intellegam, at mucius tincidunt pri. Eligendi cotidieque cum ne, an harum choro nec. Has lorem petentium cu, et munere accommodare eum.\nNo illud lorem quando sed, sea ornatus eligendi comprehensam ea, quo id laudem periculis. Soleat semper eum ex. Ei est nostro eleifend principes, facer laoreet veritus te nam. Magna gubergren dissentiet ex vel, sapientem abhorreant definitionem at cum, ex mea vidit tamquam honestatis. Et facilisi adipisci sea, ei usu labore mollis. Ne sit delenit salutatus, ei brute hendrerit persecuti sea. Mei dicunt debitis electram et, sea cu illum contentiones delicatissimi, ea usu aeque quaeque percipitur."
 });
 
 perfetto.save(function(err){
@@ -569,7 +577,7 @@ var govoril = new Cafe({
     phone: "",
     email: "",
     website: "",
-    photo: "/assets/images/9.я_ж_тебе_говорил.jpg",
+    photo: ["/assets/images/9.я_ж_тебе_говорил.jpg", "/assets/images/9.я_ж_тебе_говорил.jpg"],
     rating: 4.5,
     schedule: {
         mn: "12:00-00:00",
@@ -579,7 +587,8 @@ var govoril = new Cafe({
         fr: "12:00-00:00",
         sa: "12:00-00:00",
         su: "12:00-00:00"
-    }
+    },
+    description: "Lorem ipsum dolor sit amet, suavitate assentior vel eu, an meliore sapientem vel. Iriure luptatum consetetur ut sed, id probo adhuc aeque sed. In duo alienum atomorum intellegam, at mucius tincidunt pri. Eligendi cotidieque cum ne, an harum choro nec. Has lorem petentium cu, et munere accommodare eum.\nNo illud lorem quando sed, sea ornatus eligendi comprehensam ea, quo id laudem periculis. Soleat semper eum ex. Ei est nostro eleifend principes, facer laoreet veritus te nam. Magna gubergren dissentiet ex vel, sapientem abhorreant definitionem at cum, ex mea vidit tamquam honestatis. Et facilisi adipisci sea, ei usu labore mollis. Ne sit delenit salutatus, ei brute hendrerit persecuti sea. Mei dicunt debitis electram et, sea cu illum contentiones delicatissimi, ea usu aeque quaeque percipitur."
 });
 
 govoril.save(function(err){
@@ -636,7 +645,7 @@ var meals = new Cafe({
     phone: "",
     email: "",
     website: "",
-    photo: "/assets/images/10.милс.jpg",
+    photo: ["/assets/images/10.милс.jpg", "/assets/images/10.милс.jpg"],
     rating: 4.2,
     schedule: {
         mn: "12:00-00:00",
@@ -646,7 +655,8 @@ var meals = new Cafe({
         fr: "12:00-00:00",
         sa: "12:00-00:00",
         su: "12:00-00:00"
-    }
+    },
+    description: "Lorem ipsum dolor sit amet, suavitate assentior vel eu, an meliore sapientem vel. Iriure luptatum consetetur ut sed, id probo adhuc aeque sed. In duo alienum atomorum intellegam, at mucius tincidunt pri. Eligendi cotidieque cum ne, an harum choro nec. Has lorem petentium cu, et munere accommodare eum.\nNo illud lorem quando sed, sea ornatus eligendi comprehensam ea, quo id laudem periculis. Soleat semper eum ex. Ei est nostro eleifend principes, facer laoreet veritus te nam. Magna gubergren dissentiet ex vel, sapientem abhorreant definitionem at cum, ex mea vidit tamquam honestatis. Et facilisi adipisci sea, ei usu labore mollis. Ne sit delenit salutatus, ei brute hendrerit persecuti sea. Mei dicunt debitis electram et, sea cu illum contentiones delicatissimi, ea usu aeque quaeque percipitur."
 });
 
 meals.save(function(err){
@@ -703,7 +713,7 @@ var miaDora = new Cafe({
     phone: "",
     email: "",
     website: "",
-    photo: "/assets/images/11.mia_dora.jpg",
+    photo: ["/assets/images/11.mia_dora.jpg", "/assets/images/11.mia_dora.jpg"],
     rating: 4.3,
     schedule: {
         mn: "20:00-05:00",
@@ -713,7 +723,8 @@ var miaDora = new Cafe({
         fr: "20:00-05:00",
         sa: "20:00-05:00",
         su: "20:00-05:00"
-    }
+    },
+    description: "Lorem ipsum dolor sit amet, suavitate assentior vel eu, an meliore sapientem vel. Iriure luptatum consetetur ut sed, id probo adhuc aeque sed. In duo alienum atomorum intellegam, at mucius tincidunt pri. Eligendi cotidieque cum ne, an harum choro nec. Has lorem petentium cu, et munere accommodare eum.\nNo illud lorem quando sed, sea ornatus eligendi comprehensam ea, quo id laudem periculis. Soleat semper eum ex. Ei est nostro eleifend principes, facer laoreet veritus te nam. Magna gubergren dissentiet ex vel, sapientem abhorreant definitionem at cum, ex mea vidit tamquam honestatis. Et facilisi adipisci sea, ei usu labore mollis. Ne sit delenit salutatus, ei brute hendrerit persecuti sea. Mei dicunt debitis electram et, sea cu illum contentiones delicatissimi, ea usu aeque quaeque percipitur."
 });
 
 miaDora.save(function(err){
@@ -770,7 +781,7 @@ var lilou = new Cafe({
     phone: "",
     email: "",
     website: "",
-    photo: "/assets/images/12.lilou.jpg",
+    photo: ["/assets/images/12.lilou.jpg", "/assets/images/12.lilou.jpg"],
     rating: 4.3,
     schedule: {
         mn: "12:00-23:00",
@@ -780,7 +791,8 @@ var lilou = new Cafe({
         fr: "12:00-02:00",
         sa: "12:00-02:00",
         su: "12:00-23:00"
-    }
+    },
+    description: "Lorem ipsum dolor sit amet, suavitate assentior vel eu, an meliore sapientem vel. Iriure luptatum consetetur ut sed, id probo adhuc aeque sed. In duo alienum atomorum intellegam, at mucius tincidunt pri. Eligendi cotidieque cum ne, an harum choro nec. Has lorem petentium cu, et munere accommodare eum.\nNo illud lorem quando sed, sea ornatus eligendi comprehensam ea, quo id laudem periculis. Soleat semper eum ex. Ei est nostro eleifend principes, facer laoreet veritus te nam. Magna gubergren dissentiet ex vel, sapientem abhorreant definitionem at cum, ex mea vidit tamquam honestatis. Et facilisi adipisci sea, ei usu labore mollis. Ne sit delenit salutatus, ei brute hendrerit persecuti sea. Mei dicunt debitis electram et, sea cu illum contentiones delicatissimi, ea usu aeque quaeque percipitur."
 });
 
 lilou.save(function(err){
@@ -837,7 +849,7 @@ var vremjaEst = new Cafe({
     phone: "",
     email: "",
     website: "",
-    photo: "/assets/images/13.время_есть.jpg",
+    photo: ["/assets/images/13.время_есть.jpg", "/assets/images/13.время_есть.jpg"],
     rating: 4.2,
     schedule: {
         mn: "11:00-00:00",
@@ -847,7 +859,8 @@ var vremjaEst = new Cafe({
         fr: "11:00-05:00",
         sa: "11:00-05:00",
         su: "11:00-00:00"
-    }
+    },
+    description: "Lorem ipsum dolor sit amet, suavitate assentior vel eu, an meliore sapientem vel. Iriure luptatum consetetur ut sed, id probo adhuc aeque sed. In duo alienum atomorum intellegam, at mucius tincidunt pri. Eligendi cotidieque cum ne, an harum choro nec. Has lorem petentium cu, et munere accommodare eum.\nNo illud lorem quando sed, sea ornatus eligendi comprehensam ea, quo id laudem periculis. Soleat semper eum ex. Ei est nostro eleifend principes, facer laoreet veritus te nam. Magna gubergren dissentiet ex vel, sapientem abhorreant definitionem at cum, ex mea vidit tamquam honestatis. Et facilisi adipisci sea, ei usu labore mollis. Ne sit delenit salutatus, ei brute hendrerit persecuti sea. Mei dicunt debitis electram et, sea cu illum contentiones delicatissimi, ea usu aeque quaeque percipitur."
 });
 
 vremjaEst.save(function(err){
@@ -904,7 +917,7 @@ var greyCafe = new Cafe({
     phone: "",
     email: "",
     website: "",
-    photo: "/assets/images/14.грай-кафе.jpg",
+    photo: ["/assets/images/14.грай-кафе.jpg", "/assets/images/14.грай-кафе.jpg"],
     rating: 4.5,
     schedule: {
         mn: "12:00-23:00",
@@ -914,7 +927,8 @@ var greyCafe = new Cafe({
         fr: "12:00-00:00",
         sa: "12:00-00:00",
         su: "12:00-23:00"
-    }
+    },
+    description: "Lorem ipsum dolor sit amet, suavitate assentior vel eu, an meliore sapientem vel. Iriure luptatum consetetur ut sed, id probo adhuc aeque sed. In duo alienum atomorum intellegam, at mucius tincidunt pri. Eligendi cotidieque cum ne, an harum choro nec. Has lorem petentium cu, et munere accommodare eum.\nNo illud lorem quando sed, sea ornatus eligendi comprehensam ea, quo id laudem periculis. Soleat semper eum ex. Ei est nostro eleifend principes, facer laoreet veritus te nam. Magna gubergren dissentiet ex vel, sapientem abhorreant definitionem at cum, ex mea vidit tamquam honestatis. Et facilisi adipisci sea, ei usu labore mollis. Ne sit delenit salutatus, ei brute hendrerit persecuti sea. Mei dicunt debitis electram et, sea cu illum contentiones delicatissimi, ea usu aeque quaeque percipitur."
 });
 
 greyCafe.save(function(err){
@@ -971,7 +985,7 @@ var chaplin = new Cafe({
     phone: "",
     email: "",
     website: "",
-    photo: "/assets/images/15.чаплин.jpg",
+    photo: ["/assets/images/15.чаплин.jpg", "/assets/images/15.чаплин.jpg"],
     rating: 3.8,
     schedule: {
         mn: "12:00-23:00",
@@ -981,7 +995,8 @@ var chaplin = new Cafe({
         fr: "12:00-23:00",
         sa: "12:00-23:00",
         su: "12:00-23:00"
-    }
+    },
+    description: "Lorem ipsum dolor sit amet, suavitate assentior vel eu, an meliore sapientem vel. Iriure luptatum consetetur ut sed, id probo adhuc aeque sed. In duo alienum atomorum intellegam, at mucius tincidunt pri. Eligendi cotidieque cum ne, an harum choro nec. Has lorem petentium cu, et munere accommodare eum.\nNo illud lorem quando sed, sea ornatus eligendi comprehensam ea, quo id laudem periculis. Soleat semper eum ex. Ei est nostro eleifend principes, facer laoreet veritus te nam. Magna gubergren dissentiet ex vel, sapientem abhorreant definitionem at cum, ex mea vidit tamquam honestatis. Et facilisi adipisci sea, ei usu labore mollis. Ne sit delenit salutatus, ei brute hendrerit persecuti sea. Mei dicunt debitis electram et, sea cu illum contentiones delicatissimi, ea usu aeque quaeque percipitur."
 });
 
 chaplin.save(function(err){
@@ -1037,7 +1052,7 @@ var monaco = new Cafe({
     phone: "",
     email: "",
     website: "",
-    photo: "/assets/images/16.монако.jpg",
+    photo: ["/assets/images/16.монако.jpg", "/assets/images/16.монако.jpg"],
     rating: 4.0,
     schedule: {
         mn: "12:00-05:00",
@@ -1047,7 +1062,8 @@ var monaco = new Cafe({
         fr: "12:00-05:00",
         sa: "17:00-05:00",
         su: "17:00-05:00"
-    }
+    },
+    description: "Lorem ipsum dolor sit amet, suavitate assentior vel eu, an meliore sapientem vel. Iriure luptatum consetetur ut sed, id probo adhuc aeque sed. In duo alienum atomorum intellegam, at mucius tincidunt pri. Eligendi cotidieque cum ne, an harum choro nec. Has lorem petentium cu, et munere accommodare eum.\nNo illud lorem quando sed, sea ornatus eligendi comprehensam ea, quo id laudem periculis. Soleat semper eum ex. Ei est nostro eleifend principes, facer laoreet veritus te nam. Magna gubergren dissentiet ex vel, sapientem abhorreant definitionem at cum, ex mea vidit tamquam honestatis. Et facilisi adipisci sea, ei usu labore mollis. Ne sit delenit salutatus, ei brute hendrerit persecuti sea. Mei dicunt debitis electram et, sea cu illum contentiones delicatissimi, ea usu aeque quaeque percipitur."
 });
 
 monaco.save(function(err){
@@ -1103,7 +1119,7 @@ var view = new Cafe({
     phone: "",
     email: "",
     website: "",
-    photo: "/assets/images/17.the_view.jpg",
+    photo: ["/assets/images/17.the_view.jpg", "/assets/images/17.the_view.jpg"],
     rating: 4.2,
     schedule: {
         mn: "12:00-23:30",
@@ -1113,7 +1129,8 @@ var view = new Cafe({
         fr: "12:00-23:30",
         sa: "12:00-23:30",
         su: "12:00-23:30"
-    }
+    },
+    description: "Lorem ipsum dolor sit amet, suavitate assentior vel eu, an meliore sapientem vel. Iriure luptatum consetetur ut sed, id probo adhuc aeque sed. In duo alienum atomorum intellegam, at mucius tincidunt pri. Eligendi cotidieque cum ne, an harum choro nec. Has lorem petentium cu, et munere accommodare eum.\nNo illud lorem quando sed, sea ornatus eligendi comprehensam ea, quo id laudem periculis. Soleat semper eum ex. Ei est nostro eleifend principes, facer laoreet veritus te nam. Magna gubergren dissentiet ex vel, sapientem abhorreant definitionem at cum, ex mea vidit tamquam honestatis. Et facilisi adipisci sea, ei usu labore mollis. Ne sit delenit salutatus, ei brute hendrerit persecuti sea. Mei dicunt debitis electram et, sea cu illum contentiones delicatissimi, ea usu aeque quaeque percipitur."
 });
 
 view.save(function(err){
@@ -1170,7 +1187,7 @@ var podvorie = new Cafe({
     phone: "",
     email: "",
     website: "",
-    photo: "/assets/images/18.подворье.jpg",
+    photo: ["/assets/images/18.подворье.jpg", "/assets/images/18.подворье.jpg"],
     rating: 4.3,
     schedule: {
         mn: "12:00-23:00",
@@ -1180,7 +1197,8 @@ var podvorie = new Cafe({
         fr: "12:00-23:00",
         sa: "12:00-23:00",
         su: "12:00-23:00"
-    }
+    },
+    description: "Lorem ipsum dolor sit amet, suavitate assentior vel eu, an meliore sapientem vel. Iriure luptatum consetetur ut sed, id probo adhuc aeque sed. In duo alienum atomorum intellegam, at mucius tincidunt pri. Eligendi cotidieque cum ne, an harum choro nec. Has lorem petentium cu, et munere accommodare eum.\nNo illud lorem quando sed, sea ornatus eligendi comprehensam ea, quo id laudem periculis. Soleat semper eum ex. Ei est nostro eleifend principes, facer laoreet veritus te nam. Magna gubergren dissentiet ex vel, sapientem abhorreant definitionem at cum, ex mea vidit tamquam honestatis. Et facilisi adipisci sea, ei usu labore mollis. Ne sit delenit salutatus, ei brute hendrerit persecuti sea. Mei dicunt debitis electram et, sea cu illum contentiones delicatissimi, ea usu aeque quaeque percipitur."
 });
 
 podvorie.save(function(err){
@@ -1237,7 +1255,7 @@ var baldenini = new Cafe({
     phone: "",
     email: "",
     website: "",
-    photo: "/assets/images/19.baldenini.jpg",
+    photo: ["/assets/images/19.baldenini.jpg", "/assets/images/19.baldenini.jpg"],
     rating: 4.3,
     schedule: {
         mn: "12:00-00:00",
@@ -1247,7 +1265,8 @@ var baldenini = new Cafe({
         fr: "12:00-00:00",
         sa: "12:00-00:00",
         su: "12:00-00:00"
-    }
+    },
+    description: "Lorem ipsum dolor sit amet, suavitate assentior vel eu, an meliore sapientem vel. Iriure luptatum consetetur ut sed, id probo adhuc aeque sed. In duo alienum atomorum intellegam, at mucius tincidunt pri. Eligendi cotidieque cum ne, an harum choro nec. Has lorem petentium cu, et munere accommodare eum.\nNo illud lorem quando sed, sea ornatus eligendi comprehensam ea, quo id laudem periculis. Soleat semper eum ex. Ei est nostro eleifend principes, facer laoreet veritus te nam. Magna gubergren dissentiet ex vel, sapientem abhorreant definitionem at cum, ex mea vidit tamquam honestatis. Et facilisi adipisci sea, ei usu labore mollis. Ne sit delenit salutatus, ei brute hendrerit persecuti sea. Mei dicunt debitis electram et, sea cu illum contentiones delicatissimi, ea usu aeque quaeque percipitur."
 });
 
 baldenini.save(function(err){
@@ -1304,7 +1323,7 @@ var renesans = new Cafe({
     phone: "",
     email: "",
     website: "",
-    photo: "/assets/images/20.РэнеСанс.jpg",
+    photo: ["/assets/images/20.РэнеСанс.jpg", "/assets/images/20.РэнеСанс.jpg"],
     rating: 4.5,
     schedule: {
         mn: "12:00-00:00",
@@ -1314,7 +1333,8 @@ var renesans = new Cafe({
         fr: "12:00-02:00",
         sa: "12:00-02:00",
         su: "12:00-02:00"
-    }
+    },
+    description: "Lorem ipsum dolor sit amet, suavitate assentior vel eu, an meliore sapientem vel. Iriure luptatum consetetur ut sed, id probo adhuc aeque sed. In duo alienum atomorum intellegam, at mucius tincidunt pri. Eligendi cotidieque cum ne, an harum choro nec. Has lorem petentium cu, et munere accommodare eum.\nNo illud lorem quando sed, sea ornatus eligendi comprehensam ea, quo id laudem periculis. Soleat semper eum ex. Ei est nostro eleifend principes, facer laoreet veritus te nam. Magna gubergren dissentiet ex vel, sapientem abhorreant definitionem at cum, ex mea vidit tamquam honestatis. Et facilisi adipisci sea, ei usu labore mollis. Ne sit delenit salutatus, ei brute hendrerit persecuti sea. Mei dicunt debitis electram et, sea cu illum contentiones delicatissimi, ea usu aeque quaeque percipitur."
 });
 
 renesans.save(function(err){
@@ -1371,7 +1391,7 @@ var grand = new Cafe({
     phone: "",
     email: "",
     website: "",
-    photo: "/assets/images/21.grand_cafe.jpg",
+    photo: ["/assets/images/21.grand_cafe.jpg", "/assets/images/21.grand_cafe.jpg"],
     rating: 4.4,
     schedule: {
         mn: "12:00-00:00",
@@ -1381,7 +1401,8 @@ var grand = new Cafe({
         fr: "12:00-00:00",
         sa: "12:00-00:00",
         su: "12:00-00:00"
-    }
+    },
+    description: "Lorem ipsum dolor sit amet, suavitate assentior vel eu, an meliore sapientem vel. Iriure luptatum consetetur ut sed, id probo adhuc aeque sed. In duo alienum atomorum intellegam, at mucius tincidunt pri. Eligendi cotidieque cum ne, an harum choro nec. Has lorem petentium cu, et munere accommodare eum.\nNo illud lorem quando sed, sea ornatus eligendi comprehensam ea, quo id laudem periculis. Soleat semper eum ex. Ei est nostro eleifend principes, facer laoreet veritus te nam. Magna gubergren dissentiet ex vel, sapientem abhorreant definitionem at cum, ex mea vidit tamquam honestatis. Et facilisi adipisci sea, ei usu labore mollis. Ne sit delenit salutatus, ei brute hendrerit persecuti sea. Mei dicunt debitis electram et, sea cu illum contentiones delicatissimi, ea usu aeque quaeque percipitur."
 });
 
 grand.save(function(err){
@@ -1438,7 +1459,7 @@ var sad = new Cafe({
     phone: "",
     email: "",
     website: "",
-    photo: "/assets/images/22.сад.jpg",
+    photo: ["/assets/images/22.сад.jpg", "/assets/images/22.сад.jpg"],
     rating: 4.2,
     schedule: {
         mn: "12:00-00:00",
@@ -1448,7 +1469,8 @@ var sad = new Cafe({
         fr: "12:00-04:00",
         sa: "12:00-04:00",
         su: "12:00-00:00"
-    }
+    },
+    description: "Lorem ipsum dolor sit amet, suavitate assentior vel eu, an meliore sapientem vel. Iriure luptatum consetetur ut sed, id probo adhuc aeque sed. In duo alienum atomorum intellegam, at mucius tincidunt pri. Eligendi cotidieque cum ne, an harum choro nec. Has lorem petentium cu, et munere accommodare eum.\nNo illud lorem quando sed, sea ornatus eligendi comprehensam ea, quo id laudem periculis. Soleat semper eum ex. Ei est nostro eleifend principes, facer laoreet veritus te nam. Magna gubergren dissentiet ex vel, sapientem abhorreant definitionem at cum, ex mea vidit tamquam honestatis. Et facilisi adipisci sea, ei usu labore mollis. Ne sit delenit salutatus, ei brute hendrerit persecuti sea. Mei dicunt debitis electram et, sea cu illum contentiones delicatissimi, ea usu aeque quaeque percipitur."
 });
 
 sad.save(function(err){
@@ -1505,7 +1527,7 @@ var grandBellagio = new Cafe({
     phone: "",
     email: "",
     website: "",
-    photo: "/assets/images/23.грандж-беладжио.jpg",
+    photo: ["/assets/images/23.грандж-беладжио.jpg", "/assets/images/23.грандж-беладжио.jpg"],
     rating: 4.3,
     schedule: {
         mn: "круглосуточно",
@@ -1515,7 +1537,8 @@ var grandBellagio = new Cafe({
         fr: "круглосуточно",
         sa: "круглосуточно",
         su: "круглосуточно"
-    }
+    },
+    description: "Lorem ipsum dolor sit amet, suavitate assentior vel eu, an meliore sapientem vel. Iriure luptatum consetetur ut sed, id probo adhuc aeque sed. In duo alienum atomorum intellegam, at mucius tincidunt pri. Eligendi cotidieque cum ne, an harum choro nec. Has lorem petentium cu, et munere accommodare eum.\nNo illud lorem quando sed, sea ornatus eligendi comprehensam ea, quo id laudem periculis. Soleat semper eum ex. Ei est nostro eleifend principes, facer laoreet veritus te nam. Magna gubergren dissentiet ex vel, sapientem abhorreant definitionem at cum, ex mea vidit tamquam honestatis. Et facilisi adipisci sea, ei usu labore mollis. Ne sit delenit salutatus, ei brute hendrerit persecuti sea. Mei dicunt debitis electram et, sea cu illum contentiones delicatissimi, ea usu aeque quaeque percipitur."
 });
 
 grandBellagio.save(function(err){
@@ -1573,7 +1596,7 @@ var shikari = new Cafe({
     phone: "",
     email: "",
     website: "",
-    photo: "/assets/images/24.шикари.jpg",
+    photo: ["/assets/images/24.шикари.jpg", "/assets/images/24.шикари.jpg"],
     rating: 4.2,
     schedule: {
         mn: "12:00-00:00",
@@ -1583,7 +1606,8 @@ var shikari = new Cafe({
         fr: "12:00-02:00",
         sa: "12:00-02:00",
         su: "12:00-00:00"
-    }
+    },
+    description: "Lorem ipsum dolor sit amet, suavitate assentior vel eu, an meliore sapientem vel. Iriure luptatum consetetur ut sed, id probo adhuc aeque sed. In duo alienum atomorum intellegam, at mucius tincidunt pri. Eligendi cotidieque cum ne, an harum choro nec. Has lorem petentium cu, et munere accommodare eum.\nNo illud lorem quando sed, sea ornatus eligendi comprehensam ea, quo id laudem periculis. Soleat semper eum ex. Ei est nostro eleifend principes, facer laoreet veritus te nam. Magna gubergren dissentiet ex vel, sapientem abhorreant definitionem at cum, ex mea vidit tamquam honestatis. Et facilisi adipisci sea, ei usu labore mollis. Ne sit delenit salutatus, ei brute hendrerit persecuti sea. Mei dicunt debitis electram et, sea cu illum contentiones delicatissimi, ea usu aeque quaeque percipitur."
 });
 
 shikari.save(function(err){
@@ -1640,7 +1664,7 @@ var paris = new Cafe({
     phone: "",
     email: "",
     website: "",
-    photo: "/assets/images/25.кафе_де_пари.jpg",
+    photo: ["/assets/images/25.кафе_де_пари.jpg", "/assets/images/25.кафе_де_пари.jpg"],
     rating: 4.4,
     schedule: {
         mn: "12:00-00:00",
@@ -1650,7 +1674,8 @@ var paris = new Cafe({
         fr: "12:00-00:00",
         sa: "12:00-00:00",
         su: "12:00-00:00"
-    }
+    },
+    description: "Lorem ipsum dolor sit amet, suavitate assentior vel eu, an meliore sapientem vel. Iriure luptatum consetetur ut sed, id probo adhuc aeque sed. In duo alienum atomorum intellegam, at mucius tincidunt pri. Eligendi cotidieque cum ne, an harum choro nec. Has lorem petentium cu, et munere accommodare eum.\nNo illud lorem quando sed, sea ornatus eligendi comprehensam ea, quo id laudem periculis. Soleat semper eum ex. Ei est nostro eleifend principes, facer laoreet veritus te nam. Magna gubergren dissentiet ex vel, sapientem abhorreant definitionem at cum, ex mea vidit tamquam honestatis. Et facilisi adipisci sea, ei usu labore mollis. Ne sit delenit salutatus, ei brute hendrerit persecuti sea. Mei dicunt debitis electram et, sea cu illum contentiones delicatissimi, ea usu aeque quaeque percipitur."
 });
 
 paris.save(function(err){
@@ -1707,7 +1732,7 @@ var milano = new Cafe({
     phone: "",
     email: "",
     website: "",
-    photo: "/assets/images/26.кафе_милано.jpg",
+    photo: ["/assets/images/26.кафе_милано.jpg", "/assets/images/26.кафе_милано.jpg"],
     rating: 4.5,
     schedule: {
         mn: "08:00-00:00",
@@ -1717,7 +1742,8 @@ var milano = new Cafe({
         fr: "08:00-00:00",
         sa: "08:00-00:00",
         su: "08:00-00:00"
-    }
+    },
+    description: "Lorem ipsum dolor sit amet, suavitate assentior vel eu, an meliore sapientem vel. Iriure luptatum consetetur ut sed, id probo adhuc aeque sed. In duo alienum atomorum intellegam, at mucius tincidunt pri. Eligendi cotidieque cum ne, an harum choro nec. Has lorem petentium cu, et munere accommodare eum.\nNo illud lorem quando sed, sea ornatus eligendi comprehensam ea, quo id laudem periculis. Soleat semper eum ex. Ei est nostro eleifend principes, facer laoreet veritus te nam. Magna gubergren dissentiet ex vel, sapientem abhorreant definitionem at cum, ex mea vidit tamquam honestatis. Et facilisi adipisci sea, ei usu labore mollis. Ne sit delenit salutatus, ei brute hendrerit persecuti sea. Mei dicunt debitis electram et, sea cu illum contentiones delicatissimi, ea usu aeque quaeque percipitur."
 });
 
 milano.save(function(err){
@@ -1774,7 +1800,7 @@ var bistro = new Cafe({
     phone: "",
     email: "",
     website: "",
-    photo: "/assets/images/27.bistro_de_luxe.jpg",
+    photo: ["/assets/images/27.bistro_de_luxe.jpg", "/assets/images/27.bistro_de_luxe.jpg"],
     rating: 4.6,
     schedule: {
         mn: "08:00-00:00",
@@ -1784,7 +1810,8 @@ var bistro = new Cafe({
         fr: "08:00-00:00",
         sa: "08:00-00:00",
         su: "08:00-00:00"
-    }
+    },
+    description: "Lorem ipsum dolor sit amet, suavitate assentior vel eu, an meliore sapientem vel. Iriure luptatum consetetur ut sed, id probo adhuc aeque sed. In duo alienum atomorum intellegam, at mucius tincidunt pri. Eligendi cotidieque cum ne, an harum choro nec. Has lorem petentium cu, et munere accommodare eum.\nNo illud lorem quando sed, sea ornatus eligendi comprehensam ea, quo id laudem periculis. Soleat semper eum ex. Ei est nostro eleifend principes, facer laoreet veritus te nam. Magna gubergren dissentiet ex vel, sapientem abhorreant definitionem at cum, ex mea vidit tamquam honestatis. Et facilisi adipisci sea, ei usu labore mollis. Ne sit delenit salutatus, ei brute hendrerit persecuti sea. Mei dicunt debitis electram et, sea cu illum contentiones delicatissimi, ea usu aeque quaeque percipitur."
 });
 
 bistro.save(function(err){
@@ -1841,7 +1868,7 @@ var beze = new Cafe({
     phone: "",
     email: "",
     website: "",
-    photo: "/assets/images/28.кафе безе.jpg",
+    photo: ["/assets/images/28.кафе безе.jpg", "/assets/images/28.кафе безе.jpg"],
     rating: 4.0,
     schedule: {
         mn: "11:00-01:00",
@@ -1851,7 +1878,8 @@ var beze = new Cafe({
         fr: "11:00-01:00",
         sa: "11:00-01:00",
         su: "11:00-01:00"
-    }
+    },
+    description: "Lorem ipsum dolor sit amet, suavitate assentior vel eu, an meliore sapientem vel. Iriure luptatum consetetur ut sed, id probo adhuc aeque sed. In duo alienum atomorum intellegam, at mucius tincidunt pri. Eligendi cotidieque cum ne, an harum choro nec. Has lorem petentium cu, et munere accommodare eum.\nNo illud lorem quando sed, sea ornatus eligendi comprehensam ea, quo id laudem periculis. Soleat semper eum ex. Ei est nostro eleifend principes, facer laoreet veritus te nam. Magna gubergren dissentiet ex vel, sapientem abhorreant definitionem at cum, ex mea vidit tamquam honestatis. Et facilisi adipisci sea, ei usu labore mollis. Ne sit delenit salutatus, ei brute hendrerit persecuti sea. Mei dicunt debitis electram et, sea cu illum contentiones delicatissimi, ea usu aeque quaeque percipitur."
 });
 
 beze.save(function(err){

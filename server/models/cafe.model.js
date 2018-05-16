@@ -25,7 +25,7 @@ const CafeSchema = new mongoose.Schema({
     phone: String,
     email: String,
     website: String,
-    photo: String,
+    photo: [String],
     rating: Number,
     schedule: {
         mn: String,
@@ -35,7 +35,8 @@ const CafeSchema = new mongoose.Schema({
         fr: String,
         sa: String,
         su: String
-    }
+    },
+    description: String
 });
 
 CafeSchema.method({

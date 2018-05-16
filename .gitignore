@@ -40,3 +40,16 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+src/app/features/containers/search/cafe-detail/cafe-detail.component.css
+src/app/features/containers/admin/edit-cafe/edit-cafe.component.html
+src/app/features/containers/search/cafe-detail/cafe-detail.component.css
+src/app/features/containers/search/cafe-detail/cafe-detail.component.html
+src/app/features/containers/admin/edit-cafe/edit-cafe.component.html
+src/app/features/containers/search/cafe-detail/cafe-detail.component.css
+src/app/features/containers/search/cafe-detail/cafe-detail.component.html
+src/app/features/containers/admin/edit-cafe/edit-cafe.component.html
+src/app/features/containers/admin/edit-cafe/edit-cafe.component.html
+src/app/features/containers/search/cafe-detail/cafe-detail.component.css
+src/app/features/containers/search/cafe-detail/cafe-detail.component.html
+src/app/features/containers/admin/edit-cafe/edit-cafe.component.html
+src/app/features/containers/admin/edit-cafe/edit-cafe.component.html
