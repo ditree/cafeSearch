@@ -1,16 +1,16 @@
 <div class="cafe-container">
 <app-data-loader [loading]="cafeService.listLoading">  
 <div style="margin-top: 50px; margin-bottom:50px; float:left;">
-      <button mat-raised-button color="accent" (click)="add()">New</button>
+      <button mat-raised-button color="accent" (click)="add()">Добавить новое</button>
 </div>
 <div class="table-responsive cafe-table" style="clear:both;">
   <table class="table table-hover">
     <thead>
-      <th>Name</th>
-      <th>Address</th>
-      <th>Contact</th>
-      <th>Rating</th>
-      <th>Action</th>
+      <th>Название</th>
+      <th>Адрес</th>
+      <th>Контактная информация</th>
+      <th>Рейтинг</th>
+      <th>Действие</th>
     </thead>
     <tbody>
       <tr *ngFor="let detail of cafeService.cafeList; let i = index; trackBy i;">
@@ -20,14 +20,14 @@
           {{detail.address.city}}, {{detail.address.postal}}
         </td>
         <td>
-          Phone: {{detail.phone}}<br/>
+          Телефон: {{detail.phone}}<br/>
           Email: {{detail.email}}<br/>
-          Website: {{detail.website}}
+          Веб-сайт: {{detail.website}}
         </td>
         <td>{{detail.rating}}</td>
         <td>
-          <button mat-raised-button color="primary" (click)="edit(detail.id)">Edit</button>
-          <button mat-raised-button color="warn" (click)="delete(detail.id)">Delete</button>
+          <button mat-raised-button color="primary" (click)="edit(detail.id)">Изменить</button>
+          <button mat-raised-button color="warn" (click)="delete(detail.id)">Удалить</button>
         </td>
       </tr>
     </tbody>

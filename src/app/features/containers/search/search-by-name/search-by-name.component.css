@@ -4,8 +4,8 @@
     padding: 10px;
 }
 .search-container {
-    padding-top: 50px;
-    padding-bottom:50px; 
+    padding-top: 35px;
+    padding-bottom:25px; 
     margin: auto;
     width: 70%;
 }
@@ -15,16 +15,16 @@
 .cafe-list {
     margin: auto;
     width: 100%;
-    padding-left: 85px;
+    padding-left: 75px;
 }
 .cafe-card {
     width: 400px;
-    max-height: 450px;
+    max-height: 410px;
     float: left;
-    margin: 25px 10px 0px 25px;
+    margin: 20px 10px 10px 70px;
 }
 img {
-    max-height: 240px;
+    max-height: 210px;
 }
 hr {
     margin: 5px 0px 0px 0px;

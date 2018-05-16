@@ -2,18 +2,18 @@
 <div mat-dialog-content>
     <div>
         <mat-form-field hideRequiredMarker="false" floatLabel="auto">
-            <input type="text" matInput placeholder="Title" name="title"
+            <input type="text" matInput placeholder="Название заведения" name="title"
              tabindex="0" [(ngModel)]="data.cafe.title" required #title="ngModel">
-             <mat-error *ngIf="title.invalid">Title is required</mat-error>
+             <mat-error *ngIf="title.invalid">Это поле обязательно</mat-error>
         </mat-form-field>
         <mat-form-field floatLabel="auto">
-            <input type="text" matInput placeholder="Path to picture" name="photo"
+            <input type="text" matInput placeholder="Расположение картинки" name="photo"
              tabindex="0" [(ngModel)]="data.cafe.photo">
         </mat-form-field>
     </div>
-    <div> <br/>Contact <br/> <br/>
+    <div> <br/>Контактная информация <br/> <br/>
             <mat-form-field floatLabel="auto">
-                <input type="text" matInput placeholder="Phone" name="phone" 
+                <input type="text" matInput placeholder="Телефон" name="phone" 
                   tabindex="0" [(ngModel)]="data.cafe.phone">
             </mat-form-field>
             <mat-form-field floatLabel="auto">
@@ -21,69 +21,69 @@
                   tabindex="0" [(ngModel)]="data.cafe.email">
             </mat-form-field>
             <mat-form-field floatLabel="auto">
-                    <input type="text" matInput placeholder="Website" name="website" 
+                    <input type="text" matInput placeholder="Веб-сайт" name="website" 
                       tabindex="0" [(ngModel)]="data.cafe.website">
                 </mat-form-field>
     </div>
-    <div> <br/>Address <br/> <br/>
+    <div> <br/>Адрес <br/> <br/>
             <mat-form-field floatLabel="auto">
-                <input type="text" matInput placeholder="Unit" name="unit" 
+                <input type="text" matInput placeholder="Район" name="unit" 
                   tabindex="0" [(ngModel)]="data.cafe.address.unit">
             </mat-form-field>
             <mat-form-field floatLabel="auto">
-                <input type="text" matInput placeholder="House" name="house" 
+                <input type="text" matInput placeholder="Дом" name="house" 
                   tabindex="0" [(ngModel)]="data.cafe.address.house">
             </mat-form-field>
             <mat-form-field floatLabel="auto">
-                    <input type="text" matInput placeholder="Street" name="street" 
+                    <input type="text" matInput placeholder="Улица" name="street" 
                       tabindex="0" [(ngModel)]="data.cafe.address.street">
             </mat-form-field>
         <mat-form-field floatLabel="auto">
-            <input type="text" matInput placeholder="City" name="city" 
+            <input type="text" matInput placeholder="Город" name="city" 
               tabindex="0" [(ngModel)]="data.cafe.address.city">
         </mat-form-field>
         <mat-form-field floatLabel="auto">
-            <input type="text" matInput placeholder="Country" name="country" 
+            <input type="text" matInput placeholder="Страна" name="country" 
               tabindex="0" [(ngModel)]="data.cafe.address.country">
         </mat-form-field>
         <mat-form-field floatLabel="auto">
-                <input type="text" matInput placeholder="Postal" name="postal" 
+                <input type="text" matInput placeholder="Метро" name="postal" 
                   tabindex="0" [(ngModel)]="data.cafe.address.postal">
         </mat-form-field>
     </div>
-    <div><br/>Schedule <br/><br/>
+    <div><br/>Время работы <br/><br/>
         <mat-form-field floatLabel="auto">
-            <input type="text" matInput placeholder="Monday" name="mn" 
+            <input type="text" matInput placeholder="Понедельник" name="mn" 
               tabindex="0" [(ngModel)]="data.cafe.schedule.mn">
         </mat-form-field>
         <mat-form-field floatLabel="auto">
-            <input type="text" matInput placeholder="Tuesday" name="tu" 
+            <input type="text" matInput placeholder="Вторник" name="tu" 
               tabindex="0" [(ngModel)]="data.cafe.schedule.tu">
         </mat-form-field>
         <mat-form-field floatLabel="auto">
-                <input type="text" matInput placeholder="Wednesday" name="we" 
+                <input type="text" matInput placeholder="Среда" name="we" 
                   tabindex="0" [(ngModel)]="data.cafe.schedule.we">
         </mat-form-field>
     <mat-form-field floatLabel="auto">
-        <input type="text" matInput placeholder="Thursday" name="th" 
+        <input type="text" matInput placeholder="Четверг" name="th" 
           tabindex="0" [(ngModel)]="data.cafe.schedule.th">
     </mat-form-field>
     <mat-form-field floatLabel="auto">
-        <input type="text" matInput placeholder="Friday" name="fr" 
+        <input type="text" matInput placeholder="Пятница" name="fr" 
           tabindex="0" [(ngModel)]="data.cafe.schedule.fr">
     </mat-form-field>
     <mat-form-field floatLabel="auto">
-            <input type="text" matInput placeholder="Saturday" name="sa" 
+            <input type="text" matInput placeholder="Суббота" name="sa" 
               tabindex="0" [(ngModel)]="data.cafe.schedule.sa">
     </mat-form-field>
     <mat-form-field floatLabel="auto">
-            <input type="text" matInput placeholder="Sunday" name="su" 
+            <input type="text" matInput placeholder="Воскресенье" name="su" 
               tabindex="0" [(ngModel)]="data.cafe.schedule.su">
     </mat-form-field>
 </div>
    
 </div>
 <div mat-dialog-actions>
-    <button mat-button [mat-dialog-close]="data.cafe" tabindex="2">Ok</button>
-    <button mat-button (click)="onCancelClick()" tabindex="-1">Cancel</button>
+    <button mat-button [mat-dialog-close]="data.cafe" tabindex="2">Подтвердить</button>
+    <button mat-button (click)="onCancelClick()" tabindex="-1">Отмена</button>
 </div>

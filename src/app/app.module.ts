@@ -50,7 +50,7 @@ import { AgmSnazzyInfoWindowModule } from '@agm/snazzy-info-window';
     SharedModule,
     NgbModule.forRoot(),
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyAG5wtDTPZIhhEac8P0g-bbcZrjvzRwUyM',
+      apiKey: 'AIzaSyCkMKAVHt81BEEB73IeyuJG9C2jQlO-qrE',
       libraries: ['places', 'geometry'],
       region: 'by',
       language: 'ru'

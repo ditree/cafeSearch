@@ -1,6 +1,6 @@
 <div class="detail-container">
     <div class="back"><button mat-raised-button color="primary"
-    (click)="goBack()">&laquo; Back</button></div>
+    (click)="goBack()">&laquo; Назад</button></div>
     <app-loader [loading]="searchDetailsService.isLoading">  
              
         <div *ngIf="!isEmpty(searchDetailsService.cafeDetail)" class="cafe-detail">
@@ -18,14 +18,14 @@
            </div>
            <div class="details">
                <div>
-                <p><strong>Contact:</strong><br/>
-                    <span><strong>Phone:</strong> {{searchDetailsService.cafeDetail.phone}}</span><br/>
+                <p><strong>Контактная информация:</strong><br/>
+                    <span><strong>Телефон:</strong> {{searchDetailsService.cafeDetail.phone}}</span><br/>
                     <span><strong>Email:</strong> {{searchDetailsService.cafeDetail.email}}</span><br/>
-                    <span><strong>Website:</strong> {{searchDetailsService.cafeDetail.website}}</span><br/>
+                    <span><strong>Вебсайт:</strong> {{searchDetailsService.cafeDetail.website}}</span><br/>
                 </p>
                 </div>
                 <div>
-                <p><strong>Address:</strong><br/>
+                <p><strong>Адрес:</strong><br/>
                     <span *ngIf="searchDetailsService.cafeDetail.address.unit!==''">{{searchDetailsService.cafeDetail.address.unit}} - </span>
                     <span *ngIf="searchDetailsService.cafeDetail.address.house!==''">{{searchDetailsService.cafeDetail.address.house}} </span>
                     <span *ngIf="searchDetailsService.cafeDetail.address.street!==''">{{searchDetailsService.cafeDetail.address.street}}, </span>
@@ -33,14 +33,14 @@
                 </p>
                 </div>
                 <div>
-                <p><strong>Schedule:</strong><br/>
-                    <span><strong>Monday:</strong> {{searchDetailsService.cafeDetail.schedule.mn}}</span>
-                    <span><strong>Tuesday:</strong> {{searchDetailsService.cafeDetail.schedule.tu}}</span>
-                    <span><strong>Wednesday:</strong> {{searchDetailsService.cafeDetail.schedule.we}}</span>
-                    <span><strong>Thursday:</strong> {{searchDetailsService.cafeDetail.schedule.th}}</span>
-                    <span><strong>Friday:</strong> {{searchDetailsService.cafeDetail.schedule.fr}}</span>
-                    <span><strong>Saturday:</strong> {{searchDetailsService.cafeDetail.schedule.sa}}</span>
-                    <span><strong>Sanday:</strong> {{searchDetailsService.cafeDetail.schedule.su}}</span>
+                <p><strong>Время работы:</strong><br/>
+                    <span><strong>Понедельник:</strong> {{searchDetailsService.cafeDetail.schedule.mn}}</span>
+                    <span><strong>Вторник:</strong> {{searchDetailsService.cafeDetail.schedule.tu}}</span>
+                    <span><strong>Среда:</strong> {{searchDetailsService.cafeDetail.schedule.we}}</span>
+                    <span><strong>Четверг:</strong> {{searchDetailsService.cafeDetail.schedule.th}}</span>
+                    <span><strong>Пятница:</strong> {{searchDetailsService.cafeDetail.schedule.fr}}</span>
+                    <span><strong>Суббота:</strong> {{searchDetailsService.cafeDetail.schedule.sa}}</span>
+                    <span><strong>Воскресенье:</strong> {{searchDetailsService.cafeDetail.schedule.su}}</span>
                 </p>
                 </div>
            </div>
@@ -53,13 +53,13 @@
                 <span *ngIf="(searchDetailsService.cafeDetail.rating % 1) >= 0.5" class="fa fa-star-half checked"></span>
 
                <button style="margin-left:610px;"
-                mat-raised-button color="accent" (click)="openModal()">Write review</button>
+                mat-raised-button color="accent" (click)="openModal()">Написать отзыв</button>
             </div>
             <div>
           <div class="post-container">
                <mat-accordion>
                     <mat-expansion-panel>
-                            <mat-expansion-panel-header> <mat-panel-title>Reviews</mat-panel-title> </mat-expansion-panel-header>
+                            <mat-expansion-panel-header> <mat-panel-title>Отзывы</mat-panel-title> </mat-expansion-panel-header>
                             <div class="post" *ngFor="let detail of searchDetailsService.postList; let i = index; trackBy i;">
                               <span class="left-side">{{detail.user.name}}</span>
                               <span class="middle-side">{{detail.createdAt | date : 'dd/MM/yyyy'}}</span>

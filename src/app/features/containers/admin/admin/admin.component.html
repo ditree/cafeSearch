@@ -1,7 +1,7 @@
 <button style="float:right; margin-right: 150px;" mat-raised-button color="primary"
-(click)="logout()" *ngIf="authService.isLoggedIn">Logout</button>
+(click)="logout()" *ngIf="authService.isLoggedIn">Выйти</button>
 <nav style="clear: both;">
-  <span><a mat-raised-button [routerLink]="['cafes']">Manage Cafes</a></span>
-  <span style="margin-left:30px;"><a mat-raised-button [routerLink]="['posts']">Manage Posts</a></span>
+  <span><a mat-raised-button [routerLink]="['cafes']">Управление заведениями</a></span>
+  <span style="margin-left:30px;"><a mat-raised-button [routerLink]="['posts']">Управление комментариями</a></span>
 </nav>
 <router-outlet></router-outlet>

@@ -2,7 +2,7 @@
   <app-loader [loading]="searchService.listLoading">  
   <div class="search-container">
       <mat-form-field>
-          <input type="text" placeholder="Search" aria-label="Name" matInput 
+          <input type="text" placeholder="Поиск" aria-label="Name" matInput 
           [formControl]="searchControl" #search autofocus autocorrect="off">
           <mat-icon matSuffix svgIcon="search"></mat-icon>
       </mat-form-field>
@@ -35,7 +35,7 @@
                       <span style="padding-left: 5px;"><strong>{{detail.distance}}&nbsp;km</strong></span>
                    </p>
                    <p> 
-                    <span><a [routerLink]="['/search/cafe/', detail.id]">DETAILS</a></span>          
+                    <span><a [routerLink]="['/search/cafe/', detail.id]">Подробнее</a></span>          
                   </p>
                   
                 </ng-template>
@@ -51,16 +51,16 @@
       <mat-list *ngIf="searchService.markersList.length > 0">
           <mat-list-item *ngFor="let detail of searchService.markersList; let i = index; trackBy i;">
             <h3 matLine>{{detail.title}}</h3>
-            <p matLine><strong>Address:</strong>
+            <p matLine><strong>Адрес:</strong>
               <span style="padding-left:5px;">
                 <span *ngIf="detail.address.unit!==''">{{detail.address.unit}} - </span>
                 <span *ngIf="detail.address.house!==''">{{detail.address.house}} </span>
                 <span *ngIf="detail.address.street!==''">{{detail.address.street}}, </span>
                 <span *ngIf="detail.address.city!==''">{{detail.address.city}}</span>
               </span><br/>
-              <span><strong>Distance:</strong> {{detail.distance}} km</span>            
+              <span><strong>Расстояние:</strong> {{detail.distance}} км</span>            
             </p>
-            <span style="float:right; margin-top: -10px;"><a mat-raised-button [routerLink]="['/search/cafe/',detail.id]">DETAILS</a></span>
+            <span style="float:right; margin-top: -10px;"><a mat-raised-button color="accent" [routerLink]="['/search/cafe/',detail.id]">Подробнее</a></span>
           </mat-list-item>
       </mat-list>
       </div>

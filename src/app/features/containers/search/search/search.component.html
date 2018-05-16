@@ -1,6 +1,9 @@
 <nav style="clear: both;">
-    <span><a mat-raised-button [routerLink]="['searchByName']">Search by Name</a></span>
-    <span style="margin-left:30px;"><a mat-raised-button [routerLink]="['searchByLocation']">Search by Location</a></span>
+    <div class="imgCenter">
+    <img src="assets\images\logo.png">
+    </div>
+    <span><a mat-raised-button [routerLink]="['searchByName']">Поиск по названию</a></span>
+    <span style="margin-left:30px;"><a  style ="margin-top:20px;" mat-raised-button [routerLink]="['searchByLocation']">Поиск по местоположению</a></span>
   </nav>
   <router-outlet></router-outlet>
   

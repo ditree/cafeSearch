@@ -1,24 +1,24 @@
 <form [formGroup]="loginForm" >
-  <h2>Administarator login</h2>
+  <h2>Администратор</h2>
   <div>
     <mat-form-field hideRequiredMarker="false"
     floatLabel="auto">
-      <input type="text" matInput placeholder="Enter User Name" name="userCtr"
+      <input type="text" matInput placeholder="Введите логин" name="userCtr"
     formControlName="userCtrl" maxlength="30" tabindex=0 required>
-      <mat-error *ngIf="loginForm.get('userCtrl')?.invalid">User Name is required</mat-error>
+      <mat-error *ngIf="loginForm.get('userCtrl')?.invalid">Это поле обязательное</mat-error>
     </mat-form-field>
 
     <mat-form-field
     hideRequiredMarker="false"
     floatLabel="auto">
-      <input type="password" matInput placeholder="Enter Password" name="paswCtrl" 
+      <input type="password" matInput placeholder="Введите пароль" name="paswCtrl" 
     formControlName="paswCtrl" maxlength="30" tabindex=0 required>
-      <mat-error *ngIf="loginForm.get('paswCtrl')?.invalid">Password is required</mat-error>
+      <mat-error *ngIf="loginForm.get('paswCtrl')?.invalid">Это поле обязательное</mat-error>
     </mat-form-field>
   </div>
 
   <div>
     <button mat-raised-button color="primary"
-    (click)="login(loginForm)"  *ngIf="!authService.isLoggedIn">Login</button>
+    (click)="login(loginForm)"  *ngIf="!authService.isLoggedIn">Войти</button>
   </div>
 </form>

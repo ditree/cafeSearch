@@ -7,10 +7,10 @@
               <span class="left-side">{{detail.user.name}}</span><span class="right-side">{{detail.rate}}</span>
               <br/><br/>
               <p>{{detail.text}}</p>
-              <span class="left-side">Phone:  {{detail.user.phone}}     Email: {{detail.user.email}}</span>
+              <span class="left-side">Телефон:  {{detail.user.phone}}     Email: {{detail.user.email}}</span>
               <span class="right-side">{{detail.createdAt | date : 'dd/MM/yyyy'}}</span><br/>
               <mat-action-row>
-                  <button mat-raised-button color="warn" (click)="delete(detail.id)">Delete</button>
+                  <button mat-raised-button color="warn" (click)="delete(detail.id)">Удалить</button>
               </mat-action-row>
             </div>
         </mat-expansion-panel>

@@ -2,7 +2,7 @@
   <app-loader [loading]="searchService.listLoading">  
   <div class="search-container">
       <mat-form-field>
-          <input type="text" placeholder="Search" aria-label="Name" matInput 
+          <input type="text" placeholder="Поиск" aria-label="Name" matInput 
           [formControl]="searchControl">
           <mat-icon matSuffix svgIcon="search"></mat-icon>
       </mat-form-field>
@@ -16,7 +16,7 @@
           </mat-card-header>
           <img mat-card-image [src]="detail.photo" alt="photo">
           <mat-card-content>
-            <p><strong>Address:</strong><br/>
+            <p><strong>Адрес:</strong><br/>
               <span *ngIf="detail.address.unit!==''">{{detail.address.unit}} - </span>
               <span *ngIf="detail.address.house!==''">{{detail.address.house}} </span>
               <span *ngIf="detail.address.street!==''">{{detail.address.street}}, </span>
@@ -25,7 +25,7 @@
           </mat-card-content>
           <hr/>
           <mat-card-actions>
-            <a mat-raised-button [routerLink]="['/search/cafe/', detail.id]">DETAILS</a>
+            <a mat-raised-button color="accent" [routerLink]="['/search/cafe/', detail.id]">Подробнее</a>
           </mat-card-actions>
         </mat-card>
        

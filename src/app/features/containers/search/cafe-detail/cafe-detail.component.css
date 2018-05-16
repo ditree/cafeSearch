@@ -73,7 +73,7 @@ agm-map {
 }
 .details div:nth-child(2) {
     margin-top: 30px;
-    width: 30%;
+    width: 27%;
     float: left;
 }
 .details div:nth-child(3) {
@@ -81,15 +81,18 @@ agm-map {
     width: 40%;
     float: left;
 }
-.details p {
-    font-size: 18px;
-    text-decoration: underline;
-}
 
 .details span {
+  
     font-size: 14px;
     text-decoration: none;
 }
+.details p {
+    font-size: 18px;
+    text-decoration: none;
+}
+
+
 .details::after {
     clear: both;
     display: table;
