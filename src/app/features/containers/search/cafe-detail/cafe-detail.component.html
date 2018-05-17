@@ -3,8 +3,8 @@
     (click)="goBack()">&laquo; Назад</button></div><br/>
     <app-loader [loading]="searchDetailsService.isLoading">  
         <div class="carousel" *ngIf="!searchDetailsService.isLoading">
-               <carousel [sources]="searchDetailsService.cafeDetail.photo" [config]="config" alt="photo"></carousel>
-                <!--<img class="photo" [src]="searchDetailsService.cafeDetail.photo[0]" alt="photo"/>-->
+               <!--<carousel [sources]="searchDetailsService.cafeDetail.photo" [config]="config" alt="photo"></carousel>-->
+                <img class="photo" [src]="searchDetailsService.cafeDetail.photo[0]" alt="photo"/>
         </div>      
         <div *ngIf="!isEmpty(searchDetailsService.cafeDetail)" class="cafe-detail">
             <h2 style="margin-bottom:20px;">{{searchDetailsService.cafeDetail.title}}</h2>
