@@ -36,7 +36,8 @@ const CafeSchema = new mongoose.Schema({
         sa: String,
         su: String
     },
-    description: String
+    description: String,
+    menu: String
 });
 
 CafeSchema.method({

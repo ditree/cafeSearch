@@ -12,6 +12,12 @@
     clear: both;
 }
 
+.carousel {
+    height: 400px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
 .googlemap {
     width: 50%;
     float: left;
@@ -21,11 +27,12 @@
     float: left;
 }
 agm-map {
-    height: 300px;
+    height: 320px;
 }
 
 .back {
     float: left;
+    margin-top: -20px;
 }
 .back::after {
     content: "";
@@ -82,6 +89,32 @@ agm-map {
     float: left;
 }
 
+.info {
+    text-align: left;
+}
+.info p {
+    padding-left: 15px;
+    font-size: 18px;
+    color: darkblue;
+}
+.about p {
+    text-align: left;
+    font-size: 18px;
+    color: darkblue;
+}
+.info span, .about span {
+    color: black;
+    font-size: 14px;
+}
+
+.about span {
+    white-space: pre-wrap;
+}
+
+.schedule span {
+    font-size: 12px;
+}
+
 .details span {
   
     font-size: 14px;
@@ -98,6 +131,11 @@ agm-map {
     display: table;
     content: "";
 }
+
+.about {
+    margin: 20px 0px;
+}
+
 .post {
     margin: 20px 0px;
 }

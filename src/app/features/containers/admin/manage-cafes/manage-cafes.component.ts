@@ -48,6 +48,7 @@ export class ManageCafesComponent implements OnInit {
             sa: '',
             su: ''
         },
+        menu: '',
         description: ''
       }, action: 'Add' }
     });

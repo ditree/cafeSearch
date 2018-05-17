@@ -1,8 +1,11 @@
 <div class="detail-container">
     <div class="back"><button mat-raised-button color="primary"
-    (click)="goBack()">&laquo; Назад</button></div>
+    (click)="goBack()">&laquo; Назад</button></div><br/>
     <app-loader [loading]="searchDetailsService.isLoading">  
-             
+        <div class="carousel" *ngIf="!searchDetailsService.isLoading">
+               <carousel [sources]="searchDetailsService.cafeDetail.photo" [config]="config" alt="photo"></carousel>
+                <!--<img class="photo" [src]="searchDetailsService.cafeDetail.photo[0]" alt="photo"/>-->
+        </div>      
         <div *ngIf="!isEmpty(searchDetailsService.cafeDetail)" class="cafe-detail">
             <h2 style="margin-bottom:20px;">{{searchDetailsService.cafeDetail.title}}</h2>
                       
@@ -14,10 +17,30 @@
            </div>
 
            <div class="info">
-                <img class="photo" [src]="searchDetailsService.cafeDetail.photo" alt="photo"/>
+            <p><strong>Адрес:</strong><br/>
+                <span *ngIf="searchDetailsService.cafeDetail.address.unit!==''">{{searchDetailsService.cafeDetail.address.unit}} - </span>
+                <span *ngIf="searchDetailsService.cafeDetail.address.house!==''">{{searchDetailsService.cafeDetail.address.house}} </span>
+                <span *ngIf="searchDetailsService.cafeDetail.address.street!==''">{{searchDetailsService.cafeDetail.address.street}}, </span>
+                <span *ngIf="searchDetailsService.cafeDetail.address.city!==''">{{searchDetailsService.cafeDetail.address.city}}</span>
+            </p>
+            <p><strong>Контактная информация:</strong><br/>
+                <span><strong>Телефон:</strong> {{searchDetailsService.cafeDetail.phone}}</span><br/>
+                <span><strong>Email:</strong> {{searchDetailsService.cafeDetail.email}}</span><br/>
+                <span><strong>Вебсайт:</strong> {{searchDetailsService.cafeDetail.website}}</span><br/>
+            </p>
+            <p class="schedule"><strong>Время работы:</strong><br/>
+                <span><strong>Понедельник:</strong> {{searchDetailsService.cafeDetail.schedule.mn}}</span>
+                <span><strong>Вторник:</strong> {{searchDetailsService.cafeDetail.schedule.tu}}</span>
+                <span><strong>Среда:</strong> {{searchDetailsService.cafeDetail.schedule.we}}</span>
+                <span><strong>Четверг:</strong> {{searchDetailsService.cafeDetail.schedule.th}}</span>
+                <span><strong>Пятница:</strong> {{searchDetailsService.cafeDetail.schedule.fr}}</span>
+                <span><strong>Суббота:</strong> {{searchDetailsService.cafeDetail.schedule.sa}}</span>
+                <span><strong>Воскресенье:</strong> {{searchDetailsService.cafeDetail.schedule.su}}</span>
+            </p>  
+            <a mat-raised-button [href]="searchDetailsService.cafeDetail.menu" target="_blank" style="margin-left: 15px;">Get Menu</a>      
            </div>
            <div class="details">
-               <div>
+               <!--<div>
                 <p><strong>Контактная информация:</strong><br/>
                     <span><strong>Телефон:</strong> {{searchDetailsService.cafeDetail.phone}}</span><br/>
                     <span><strong>Email:</strong> {{searchDetailsService.cafeDetail.email}}</span><br/>
@@ -42,8 +65,12 @@
                     <span><strong>Суббота:</strong> {{searchDetailsService.cafeDetail.schedule.sa}}</span>
                     <span><strong>Воскресенье:</strong> {{searchDetailsService.cafeDetail.schedule.su}}</span>
                 </p>
-                </div>
+                </div>-->
            </div>
+           <div class="about">
+                <p><strong>About us:</strong><br/>
+                <span>{{searchDetailsService.cafeDetail.description}}</span></p>
+            </div>
            <div style="text-align:left; padding-left: 110px; margin: 20px 0px;">
                 <span *ngIf="searchDetailsService.cafeDetail.rating >= 1" class="fa fa-star checked"></span>
                 <span *ngIf="searchDetailsService.cafeDetail.rating >= 2" class="fa fa-star checked"></span>

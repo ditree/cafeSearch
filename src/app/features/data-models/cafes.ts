@@ -28,6 +28,7 @@ export interface ICafe {
         sa: string,
         su: string
     };
+    menu: string;
     description: string;
 }
 
@@ -60,6 +61,7 @@ export class Cafe implements ICafe {
         sa: string,
         su: string
     };
+    menu: string;
     description: string;
 
     constructor(cafeInfo?: ICafe) {

@@ -101,6 +101,7 @@ deleteCafe(id: string): Observable<boolean> {
                 sa: item.schedule.sa,
                 su: item.schedule.su
             },
+            menu: item.menu,
             description: item.description
         });
       });

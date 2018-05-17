@@ -6,10 +6,14 @@
              tabindex="0" [(ngModel)]="data.cafe.title" required #title="ngModel">
              <mat-error *ngIf="title.invalid">Это поле обязательно</mat-error>
         </mat-form-field>
-        <mat-form-field floatLabel="auto">
-            <input type="text" matInput placeholder="Расположение картинки" name="photo"
-             tabindex="0" [(ngModel)]="data.cafe.photo">
-        </mat-form-field>
+    </div>
+    <div>
+        <span *ngFor="let photo of data.cafe.photo; let idx=index; ">
+            <mat-form-field floatLabel="auto">
+                <input type="text" matInput placeholder="Расположение картинки" name="photo{{idx}}"
+                tabindex="0" [(ngModel)]="data.cafe.photo[idx]">
+            </mat-form-field><button mat-mini-fab color="warn" (click)="onPhotoRemove(idx)">-</button>
+        </span><button mat-mini-fab color="primary" (click)="onPhotoAdd()">+</button>
     </div>
     <div> <br/>Контактная информация <br/> <br/>
             <mat-form-field floatLabel="auto">
@@ -81,6 +85,18 @@
               tabindex="0" [(ngModel)]="data.cafe.schedule.su">
     </mat-form-field>
 </div>
+<div>
+    <mat-form-field floatLabel="auto">
+        <input type="text" matInput placeholder="Menu" name="menu"
+        tabindex="0" [(ngModel)]="data.cafe.menu">
+    </mat-form-field>
+</div>   
+        <div>
+            <mat-form-field style="width: 100%">
+                <textarea matInput placeholder="About" name="dsc"
+                tabindex="0" [(ngModel)]="data.cafe.description"></textarea>
+            </mat-form-field>
+        </div>    
    
 </div>
 <div mat-dialog-actions>

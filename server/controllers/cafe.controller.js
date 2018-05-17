@@ -47,6 +47,7 @@ function create(req, res) {
         cafe.schedule.su =  req.body.schedule.su ?  req.body.schedule.su : '';
      } 
     cafe.description = req.body.description ? req.body.description : '';
+    cafe.menu = req.body.menu ? req.body.menu : '';
     cafe.save((err) => {
         if (err)
             res.send(err);
@@ -86,7 +87,7 @@ function update(req, res) {
             cafe.schedule.su =  req.body.schedule.su ?  req.body.schedule.su : cafe.schedule.su;
         } 
         cafe.description = req.body.description ? req.body.description : ''; 
-
+        cafe.menu = req.body.menu ? req.body.menu : '';
         
         cafe.save((err) => {
             if (err)

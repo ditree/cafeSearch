@@ -50,6 +50,7 @@ export class SearchDetailsService {
               sa: result.schedule.sa,
               su: result.schedule.su
           },
+          menu: result.menu,
           description: result.description
       });
        console.log('cafe ', this.cafeDetail);
