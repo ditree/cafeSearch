@@ -12,7 +12,7 @@
     clear: both;
 }
 
-.carousel {
+.carousel-for-pictures {
     height: 400px;
     width: 100%;
     margin-bottom: 20px;
@@ -141,4 +141,13 @@ agm-map {
 }
 .checked {
     color: orange;
+}
+
+.carousel-control-next-icon, .carousel-control-prev-icon {
+    width: 50px !important;
+    height: 50px !important;
+}
+
+.carousel-indicators li {
+    height: 10px !important;
 }

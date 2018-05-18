@@ -2,9 +2,14 @@
     <div class="back"><button mat-raised-button color="primary"
     (click)="goBack()">&laquo; Назад</button></div><br/>
     <app-loader [loading]="searchDetailsService.isLoading">  
-        <div class="carousel" *ngIf="!searchDetailsService.isLoading">
-               <carousel [sources]="searchDetailsService.cafeDetail.photo" [config]="config" alt="photo"></carousel>
-                <!--<img class="photo" [src]="searchDetailsService.cafeDetail.photo[0]" alt="photo"/>-->
+        <div class="carousel-for-pictures" *ngIf="!searchDetailsService.isLoading">
+              
+               <!--<img class="photo" [src]="searchDetailsService.cafeDetail.photo[0]" alt="photo"/>-->
+               <ngb-carousel>
+                <ng-template ngbSlide *ngFor="let photo of searchDetailsService.cafeDetail.photo; let idx=index;" >
+                  <img style="max-height: 400px; width: 100%;" [src]="searchDetailsService.cafeDetail.photo[idx]"  alt="Photo">
+                </ng-template>
+              </ngb-carousel>
         </div>      
         <div *ngIf="!isEmpty(searchDetailsService.cafeDetail)" class="cafe-detail">
             <h2 style="margin-bottom:20px;">{{searchDetailsService.cafeDetail.title}}</h2>

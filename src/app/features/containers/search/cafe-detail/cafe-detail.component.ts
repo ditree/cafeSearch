@@ -10,7 +10,7 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import { PostDetailComponent } from '../post-detail/post-detail.component';
 // import {  } from 'googlemaps';
 // import { MapsAPILoader } from '@agm/core';
-import { ICarouselConfig, AnimationConfig } from 'angular4-carousel';
+
 import * as _ from 'lodash';
 
 @Component({
@@ -24,15 +24,6 @@ export class CafeDetailComponent implements OnInit, OnDestroy {
   private idSubscription: Subscription;
   public zoom = 15;
   public isExpended = false;
-  public config: ICarouselConfig = {
-    verifyBeforeLoad: true,
-    log: false,
-    animation: true,
-    animationType: AnimationConfig.SLIDE,
-    autoplay: true,
-    autoplayDelay: 2000,
-    stopAutoplayMinWidth: 768
-  };
 
   constructor(private location: Location, private route: ActivatedRoute,
   private searchDetailsService: SearchDetailsService, public dialog: MatDialog) { }
