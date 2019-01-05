@@ -70,7 +70,7 @@ PostSchema.statics = {
     list(){
         return this.find()
         .populate('cafeID', 'title')
-        .sort({ tytle: 1 })
+        .sort({ title: 1 })
         // .limit(+limit)
         .exec();
     }
